@@ -1,0 +1,82 @@
+{
+  "mx": [
+    {
+      "id": "eneko",
+      "titulo": "Eneko",
+      "pdf": "/historias/eneko.pdf",
+      "sinopsis": "Sigue la historia de un repartidor fracasado con aires de artista, que vive con su mejor amigo en su sótano mientras paga algunas cuentas pendientes, con una tecnología capaz de revolucionar la industria desarrollada por su mejor amiga que la utiliza para... entregar paquetes de forma más veloz. Vaya desperdicio, no podría ser peor... ¿verdad?",
+      "rating": 0.0,
+      "reseñas": ["No hay"],
+      "urlLeer": "/retro/libro/el-oso-azul.html"
+    },
+    {
+      "id": "el-oso-azul",
+      "titulo": "El Oso Azul",
+      "pdf": "/historias/El OSO AZUL PRIMER CAPITULO.pdf",
+      "sinopsis": "A cinco mil metros de altura, dieciséis islas colosales llamadas Stilettos surcan las nubes...",
+      "rating": 0.0,
+      "reseñas": ["No hay"],
+      "urlLeer": "/retro/libro/el-oso-azul.html"
+    }
+  ],
+  "es": [
+    {
+      "id": "eneko",
+      "titulo": "Eneko",
+      "pdf": "/historias/eneko.pdf",
+      "sinopsis": "Sigue la historia de un repartidor fracasado con aires de artista que vive con su mejor amigo en su sótano mientras paga algunas cuentas pendientes. Tienen una tecnología capaz de revolucionar la industria, desarrollada por su mejor amiga, pero ella la utiliza para... entregar paquetes más rápido. Menudo desperdicio, no podría ser peor... ¿verdad?",
+      "rating": 0.0,
+      "reseñas": ["No hay"],
+      "urlLeer": "/retro/libro/el-oso-azul.html"
+    },
+    {
+      "id": "el-oso-azul",
+      "titulo": "El Oso Azul",
+      "pdf": "/historias/El OSO AZUL PRIMER CAPITULO.pdf",
+      "sinopsis": "A cinco mil metros de altura, dieciséis islas colosales llamadas Stilettos surcan las nubes...",
+      "rating": 0.0,
+      "reseñas": ["No hay"],
+      "urlLeer": "/retro/libro/el-oso-azul.html"
+    }
+  ],
+  "en": [
+    {
+      "id": "eneko",
+      "titulo": "Eneko",
+      "pdf": "/historias/eneko.pdf",
+      "sinopsis": "Follow the story of a washed-up delivery guy with the soul of an artist, living in his best friend's basement while tying up some loose ends. He has access to a game-changing technology developed by his best gal friend, who uses it to... deliver packages faster. What a complete waste. It couldn't possibly get any worse... right?",
+      "rating": 0.0,
+      "reseñas": ["None yet"],
+      "urlLeer": "/retro/libro/el-oso-azul.html"
+    },
+    {
+      "id": "el-oso-azul",
+      "titulo": "The Blue Bear",
+      "pdf": "/historias/El OSO AZUL PRIMER CAPITULO.pdf",
+      "sinopsis": "At an altitude of five thousand meters, sixteen colossal islands called Stilettos sail the clouds...",
+      "rating": 0.0,
+      "reseñas": ["None yet"],
+      "urlLeer": "/retro/libro/el-oso-azul.html"
+    }
+  ],
+  "pt": [
+    {
+      "id": "eneko",
+      "titulo": "Eneko",
+      "pdf": "/historias/eneko.pdf",
+      "sinopsis": "Acompanhe a história de um entregador fracassado com ares de artista, que mora no porão do seu melhor amigo enquanto limpa seu nome na praça. Eles têm em mãos uma tecnologia capaz de revolucionar a indústria, desenvolvida por sua melhor amiga, mas ela a usa para... entregar pacotes mais rápido. Que belo desperdício, não teria como piorar... teria?",
+      "rating": 0.0,
+      "reseñas": ["Nenhuma ainda"],
+      "urlLeer": "/retro/libro/el-oso-azul.html"
+    },
+    {
+      "id": "el-oso-azul",
+      "titulo": "O Urso Azul",
+      "pdf": "/historias/El OSO AZUL PRIMER CAPITULO.pdf",
+      "sinopsis": "A cinco mil metros de altitude, dezesseis ilhas colossais chamadas Stilettos cruzam as nuvens...",
+      "rating": 0.0,
+      "reseñas": ["Nenhuma ainda"],
+      "urlLeer": "/retro/libro/el-oso-azul.html"
+    }
+  ]
+}
