@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dakore-games</title>
+    <link rel="icon" href="/imagenes/logotipos/logo_dakore.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X67XNRQN0J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X67XNRQN0J');
+</script>
+
+<style>
+        :root {
+            --bg-game: #0f1026;       /* Fondo oscuro tipo espacio/arcade */
+            --panel-bg: #1d204d;      /* Fondo de los menús (Azul clásico RPG) */
+            --panel-border: #4b5bab;  /* Borde interno del panel */
+            --neon-cyan: #00ffff;     /* Color de selección / Enfoque */
+            --neon-magenta: #ff0055;  /* Acentos de interfaz */
+            --text-color: #ffffff;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            background: var(--bg-game);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+            /* Suaviza el cambio de colores en el fondo del body */
+            transition: background 0.5s ease; 
+        }
+
+        /*CRT*/
+        body::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+            z-index: 9000;
+            background-size: 100% 4px;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /*CONTENEDOR DEL PERSONAJE*/
+        #personaje-corner {
+            position: fixed;
+            bottom: 0px;
+            right: -70px;
+            z-index: 8500;
+            width: 500px;
+            height: auto;
+            pointer-events: none;
+
+            image-rendering: pixelated; 
+            image-rendering: crisp-edges;
+        }
+
+        #personaje-corner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* TRANSEXUALES Y EFECTOS DE ENTRADA */
+        #gameTransition {
+            position: fixed;
+            inset: 0;
+            z-index: 99998;
+            pointer-events: none;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .paint-drop {
+            flex: 1;
+            height: 120vh;
+            /* Fondo cuadriculado pixel art con el color magenta de juegos */
+            background-image: repeating-conic-gradient(var(--neon-magenta) 0% 25%, #000 0% 50%);
+            background-size: 16px 16px;
+            border-bottom: 10px solid var(--neon-cyan);
+            animation: drip 0.8s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+            transform: translateY(-100%);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+        }
+
+        .paint-drop:nth-child(odd) { border-bottom-left-radius: 50%; border-bottom-right-radius: 10%; }
+        .paint-drop:nth-child(even) { border-bottom-left-radius: 10%; border-bottom-right-radius: 50%; }
+
+        @keyframes drip {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        #tvStatic {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: #000 url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
+            pointer-events: none;
+            animation: staticFlicker 0.1s infinite, tvFadeOut 1s ease-out forwards;
+        }
+
+        #tvStatic.show-static {
+            animation: staticFlicker 0.1s infinite, tvFadeIn 0.1s ease-in forwards;
+        }
+
+        @keyframes tvFadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+        @keyframes tvFadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes staticFlicker {
+            0% { background-position: 0 0; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: -100% 50%; }
+        }
+
+        /*MARCO CONTENEDOR*/
+        .marco-principal {
+            min-height: 100vh;
+            position: relative;
+            background: radial-gradient(circle at center, var(--panel-bg) 0%, #08091a 100%);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: background 0.5s ease;
+        }
+
+        /*CABECITA Y LOGO */
+        header {
+            background: var(--panel-bg);
+            border: 4px solid var(--panel-border);
+            box-shadow: 0px 6px 0px #000000;
+            margin-bottom: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        header .nav-inner {
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .brand { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--neon-cyan);
+            background: #000;
+            overflow: hidden;
+            box-shadow: 3px 3px 0px #000;
+            transition: border-color 0.3s ease;
+        }
+
+        .sitename { 
+            font-family: 'Press Start 2P', monospace; 
+            font-size: 16px; 
+            color: var(--neon-cyan); 
+            text-shadow: 3px 3px 0px var(--neon-magenta);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        /*BOTONES DE JUEGO*/
+        nav ul { 
+            display: flex; 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+            gap: 15px;
+        }
+
+        nav a {
+            background: #0c0d24; 
+            color: #a2a7d9; 
+            text-decoration: none;
+            font-family: 'Press Start 2P', monospace; 
+            font-size: 11px;
+            padding: 12px 20px;
+            display: block;
+            border: 3px solid var(--panel-border);
+            box-shadow: 3px 3px 0px #000000;
+            text-transform: uppercase;
+            transition: all 0.1s ease, border-color 0.3s ease;
+        }
+
+        nav a:hover { 
+            color: #fff;
+            background: var(--neon-magenta);
+            border-color: #ff66a3;
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0px #000000;
+        }
+
+        nav a.activo { 
+            background: var(--neon-cyan); 
+            color: #000000; 
+            border-color: #ffffff;
+            font-weight: bold;
+            transform: translate(0px, 0px);
+            box-shadow: inset 3px 3px 0px rgba(0,0,0,0.5);
+        }
+
+        /*PANEL CENTRAL DEL MENÚ */
+        main {
+            flex-grow: 1;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-juego-contenedor {
+            background: var(--panel-bg);
+            border: 6px double var(--panel-border);
+            box-shadow: 0px 12px 0px #000000;
+            width: 100%;
+            padding: 40px;
+            position: relative;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .menu-juego-contenedor::before {
+            content: '';
+            position: absolute;
+            top: 6px; left: 6px; right: 6px; bottom: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+        }
+
+        .titulo-seccion {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 22px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 0px var(--panel-border);
+            transition: text-shadow 0.3s ease;
+        }
+
+        .descripcion-menu {
+            font-size: 15px;
+            color: #b9bedf;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            header .nav-inner { flex-direction: column; text-align: center; padding: 20px 10px; }
+            nav ul { flex-direction: column; width: 100%; gap: 10px; }
+            nav a { text-align: center; }
+            .menu-juego-contenedor { padding: 20px; }
+            .titulo-seccion { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="tvStatic"></div>
+<div id="gameTransition"></div>
+
+<div id="personaje-corner">
+    <img id="char-gif" src="/imagenes/renders_juegos/C-C-R.gif" alt="Character">
+</div>
+
+<div class="marco-principal">
+    <div class="page">
+        <header>
+            <div class="nav-inner">
+                <div class="brand">
+                    <a href="https://www.youtube.com/@Dakore-Dyte" style="display:flex; align-items:center; gap:12px; text-decoration:none;" target="_blank" rel="noopener noreferrer">
+                        <div class="logo-circle">
+                            <img src="/logo.png" alt="logo" onerror="this.style.display='none'" style="width:100%; height:100%; object-fit:cover;">
+                        </div> 
+                        <div class="sitename">JUEGOS</div>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                <li><a href="index.html" class="activo">INICIO</a></li>
+                <li><a href="#">JUEGOS</a></li>
+                <li><a href="historias.html">HISTORIAS</a></li>
+                <li><a href="arte.html">ARTE</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="menu-juego-contenedor">
+                <h1 class="titulo-seccion" id="menu-titulo">SELECT MODE</h1>
+                <p class="descripcion-menu" id="menu-subtitulo">Bienvenido al menú de JUEGOS, selecciona uno de los siguientes juegos para saber de que trata, como te trata y el porqué te trata. Si no hay juegos... Recuerda que: El accidente no fue culpa tuya.</p>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script>
+
+
+    let idiomaActivo = "en";
+
+    const uiText = {
+        mx: { 
+            inicio: "INICIO", 
+            juegos: "JUEGOS", 
+            historias: "HISTORIAS", 
+            arte: "ARTE", 
+            titulo: "SELECCIONA UN JUEGO", 
+            sub: "Bienvenido al menú de JUEGOS, selecciona uno de los siguientes juegos para saber de qué trata, cómo te trata y el porqué te trata. Si no hay juegos... Recuerda que: El accidente no fue culpa tuya." 
+        },
+        es: { 
+            inicio: "INICIO", 
+            juegos: "JUEGOS", 
+            historias: "HISTORIAS", 
+            arte: "ARTE", 
+            titulo: "SELECCIÓN DE JUEGARDO", 
+            sub: "Bienvenido al menú de JUEGOS, selecciona uno de los siguientes juegos para saber de qué trata, cómo te trata y el porqué te trata. Si no hay juegos... Recuerda que: El accidente no fue culpa tuya." 
+        },
+        en: { 
+            inicio: "HOME", 
+            juegos: "GAMES", 
+            historias: "STORIES", 
+            arte: "ART", 
+            titulo: "SELECT GAME", 
+            sub: "Welcome to the GAMES menu. Select a game to find out what it's about, how it treats you, and why it treats you. If there are no games... Just remember: The accident wasn't your fault." 
+        },
+        pt: { 
+            inicio: "INÍCIO", 
+            juegos: "JOGOS", 
+            historias: "HISTÓRIAS", 
+            arte: "ARTE", 
+            titulo: "SELEÇÃO DE JOGO", 
+            sub: "Bem-vindo ao menu de JOGOS, selecione um dos seguintes jogos para saber do que se trata, como ele te trata e o porquê de te tratar. Se não houver jogos... Lembre-se de que: O acidente não foi sua culpa." 
+        }
+    };
+
+    function actualizarInterfazUI() {
+        const t = uiText[idiomaActivo];
+        document.getElementById("nav-inicio").textContent = t.inicio;
+        document.getElementById("nav-juegos").textContent = t.juegos;
+        document.getElementById("nav-historias").textContent = t.historias;
+        document.getElementById("nav-arte").textContent = t.arte;
+        
+        document.getElementById("menu-titulo").textContent = t.titulo;
+        document.getElementById("menu-subtitulo").textContent = t.sub;
+
+        document.title = "Dakore-" + t.juegos;
+
+        const siteNameEl = document.querySelector('.sitename');
+        if (siteNameEl) {
+            siteNameEl.textContent = "Dakore-" + t.juegos;
+        }
+    }
+
+    function cargarSistemaTraduccion() {
+        try {
+            const langBrowser = (navigator.language || navigator.userLanguage).toLowerCase();
+            
+            if (langBrowser.includes('mx') && uiText['mx']) {
+                idiomaActivo = "mx";
+            } else {
+                const formatoCorto = langBrowser.split('-')[0];
+                
+                if (uiText[formatoCorto]) {
+                    idiomaActivo = formatoCorto;
+                } else {
+                    idiomaActivo = "en"; 
+                }
+            }
+
+            actualizarInterfazUI();
+        } catch (e) {
+            console.error("Error cargando el sistema de traducción automática:", e);
+            idiomaActivo = "en";
+            actualizarInterfazUI();
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", cargarSistemaTraduccion);
+
+    const transition = document.getElementById("gameTransition");
+    const tvStatic = document.getElementById("tvStatic");
+
+    function createPaintDrops() {
+        transition.innerHTML = "";
+        for (let i = 0; i < 6; i++) {
+            const drop = document.createElement("div");
+            drop.className = "paint-drop";
+            drop.style.animationDelay = `${i * 0.1}s`;
+            transition.appendChild(drop);
+        }
+    }
+
+    document.querySelectorAll("a[href]").forEach(link => {
+        link.addEventListener("click", function(e) {
+            const href = this.getAttribute("href");
+            const target = this.getAttribute("target");
+
+            if (!href || href.startsWith("#") || href.startsWith("javascript:") || 
+                target === "_blank" || e.ctrlKey || e.metaKey || e.shiftKey) return;
+
+            e.preventDefault();
+            createPaintDrops();
+            setTimeout(() => { tvStatic.classList.add("show-static"); }, 800);
+            setTimeout(() => { window.location.href = href; }, 1300); 
+        });
+    });
+
+    window.addEventListener("pageshow", () => {
+        transition.innerHTML = "";
+        tvStatic.classList.remove("show-static");
+    });
+    
+const basePersonajes = {
+        defecto: {
+            gif: "imagenes/renders_juegos/C-C-R.gif",
+            paleta: {
+                bgGame: "#051a05",
+                panelBg: "#0d2b14",
+                panelBorder: "#1f6e30",
+                neonCyan: "#39ff14",
+                neonMagenta: "#00ff88"
+            }
+        },
+        jokariz: {
+            gif: "imagenes/renders_juegos/jokariz-1.gif",
+            paleta: {
+                bgGame: "#150526",
+                panelBg: "#2c0e37",
+                panelBorder: "#74226c",
+                neonCyan: "#00ffcc",
+                neonMagenta: "#ff00aa"
+            }
+        },
+        colonizador: {
+            gif: "imagenes/renders_juegos/colonizador-07.gif",
+            paleta: {
+                bgGame: "#1a170c",
+                panelBg: "#523a02",
+                panelBorder: "#db9d0d",
+                neonCyan: "#ffcd70",
+                neonMagenta: "#ff0000"
+            }
+        },
+        zephyraA: {
+            gif: "imagenes/renders_juegos/zephyra-1.gif",
+            paleta: {
+                bgGame: "#c396e0",
+                panelBg: "#293375",
+                panelBorder: "#74d1e8",
+                neonCyan: "#259fcf",
+                neonMagenta: "#253fcf"
+            }
+        }
+    };
+
+    const listaNombres = Object.keys(basePersonajes);
+    const PERSONAJE_ACTIVO = listaNombres[Math.floor(Math.random() * listaNombres.length)];
+
+    function aplicarPaletaCSS(colores) {
+        const root = document.documentElement;
+        if (colores.bgGame) root.style.setProperty('--bg-game', colores.bgGame);
+        if (colores.panelBg) root.style.setProperty('--panel-bg', colores.panelBg);
+        if (colores.panelBorder) root.style.setProperty('--panel-border', colores.panelBorder);
+        if (colores.neonCyan) root.style.setProperty('--neon-cyan', colores.neonCyan);
+        if (colores.neonMagenta) root.style.setProperty('--neon-magenta', colores.neonMagenta);
+    }
+
+    function cargarConfiguracionPersonaje() {
+        const personaje = basePersonajes[PERSONAJE_ACTIVO] || basePersonajes.defecto;
+        
+        const gifElement = document.getElementById("char-gif");
+        if (gifElement) {
+            gifElement.src = personaje.gif;
+        }
+
+        aplicarPaletaCSS(personaje.paleta);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        cargarSistemaTraduccion(); 
+        cargarConfiguracionPersonaje();
+    });
+</script>
+
+</body>
+</html>
