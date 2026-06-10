@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>No encontrado</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Atomic+Age&family=Bungee&family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;600&family=Science+Gothic&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --c1:#ffffff;
+    --c2:#f7f3e9;
+    --c3:#3a2f2a;
+    --c4:#b48b5c;
+}
+
+/* Fondo */
+body{
+    margin:0;
+    padding:0;
+    background: var(--c2);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* Contenedor principal */
+.notfound-box{
+    background: var(--c1);
+    border:5px solid var(--c4);
+    border-radius:18px;
+    padding:40px 32px;
+    width: 86%;
+    max-width:720px;
+    box-shadow: 0 4px 22px rgba(0,0,0,0.25);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:26px;
+}
+
+/* Texto futurista */
+.notfound-title{
+    font-family:"Science Gothic", sans-serif;
+    font-size:42px;
+    color:var(--c3);
+}
+
+/* Subtexto */
+.notfound-text{
+    font-family: "Playfair Display", serif;
+    font-size:22px;
+    color:var(--c3);
+    line-height:1.4;
+}
+
+/* Imagen */
+.notfound-img{
+    width:75%;
+    max-width:360px;
+    margin-top:10px;
+}
+
+/* --- Botón Regresar --- */
+.btn-regresar {
+    font-family: "Science Gothic", sans-serif;
+    background-color: var(--c3);
+    color: var(--c1);
+    border: 2px solid var(--c3);
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-regresar:hover {
+    background-color: transparent;
+    color: var(--c3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(58, 47, 42, 0.2);
+}
+
+.btn-regresar:active {
+    transform: translateY(0);
+}
+
+@media(max-width:700px){
+    .notfound-title{ font-size:34px }
+    .notfound-text{ font-size:18px }
+    .notfound-img{ width:82%; }
+    .btn-regresar { font-size: 16px; width: 100%; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="notfound-box">
+    <div class="notfound-title">404</div> 
+
+    <div class="notfound-text">
+        Espera chico... más lento,<br>
+        estoy trabajando en ello.
+    </div>
+
+    <img src="/not_found_images/not-found-1.png" class="notfound-img" id="notFoundImg">
+
+<a href="/index.html" class="btn-regresar">
+    Regresar
+</a>
+</div>
+
+<script>
+(function () {
+    var img = document.getElementById("notFoundImg");
+    var texto = document.querySelector(".notfound-text");
+
+    if (!img || !texto) return;
+
+    var mes = new Date().getMonth() + 1; // 1 a 12
+
+    img.src = "/not_found_images/not-found-" + mes + ".png";
+
+    img.onerror = function () {
+        img.src = "/not_found_images/not-found-1.png";
+    };
+
+    var mensajes = {
+        1: "Enero. Esperanza no encontrada, cambio insuficiente.",
+        2: "Cupido se ha perdido.",
+        3: "Marzo se perdió, pues la culpa no era mía.",
+        4: "A gugu tata.",
+        5: "Mayo no respondió al llamado de los hijos.",
+        6: "Junio entró en vacaciones.",
+        7: "Julio, estos son los ABC canadienses. A Susie le gustan las bolas peludas.",
+        8: "Agosto fue tragado por el regreso.",
+        9: "Septiembre no dejó nada, la guerra nunca cambia.",
+        10: "Octubre invocó al anticristo.",
+        11: "Noviembre, el server murió y fue a algún lugar monocano.",
+        12: "Diciembre colapsó por santa clausula y el niño que no nació ese día."
+    };
+
+    if (mensajes[mes]) {
+        texto.innerHTML = mensajes[mes];
+    }
+
+})();
+</script>
+
+</body>
+</html>
