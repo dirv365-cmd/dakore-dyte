@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>xXx_D4k0r3-DR4W5_xXx</title>
+    <link rel="icon" href="imgenes/logotipos/logo_dakore.png" type="image/png">
+    <!-- Tipografías robadas legalmente de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DotGothic16&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X67XNRQN0J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X67XNRQN0J');
+</script>
+<style>
+:root {
+    --bg-black: #000;
+    --neon-green: #39ff14;
+    --hot-pink: #ff00cc;
+    --electric-blue: #00ffff;
+    --purple: #9900ff;
+    --yellow: #ffff00;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-black);
+    /* Fondo ajedrez 100% hecho por mi no real fake */
+    background-image: 
+        repeating-linear-gradient(45deg, #111 25%, transparent 25%, transparent 75%, #111 75%, #111),
+        repeating-linear-gradient(45deg, #111 25%, var(--bg-black) 25%, var(--bg-black) 75%, #111 75%, #111);
+    background-position: 0 0, 20px 20px;
+    background-size: 40px 40px;
+    animation: moveBackground 4s linear infinite;
+    font-family: 'DotGothic16', sans-serif;
+    color: white;
+    cursor: crosshair;
+    overflow-x: hidden;
+}
+
+/* Animación del fondo */
+@keyframes moveBackground {
+    from { background-position: 0 0, 20px 20px; }
+    to { background-position: 40px 40px, 60px 60px; }
+}
+
+/* Efecto LINEAS DE ESCANER Retrooo */
+body::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 9000;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+/* CABEZON */
+header {
+    background: #000;
+    border-bottom: 4px dashed var(--hot-pink);
+    box-shadow: 0 0 20px var(--hot-pink);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-inner {
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sitename {
+    font-family: 'Press Start 2P';
+    color: var(--neon-green);
+    text-shadow: 2px 2px var(--purple), -2px -2px var(--hot-pink);
+    animation: float 2s infinite alternate, glitch 3s infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(0) rotate(-1deg); }
+    to { transform: translateY(-5px) rotate(1deg); }
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: var(--electric-blue);
+    border: 2px dashed var(--electric-blue);
+    padding: 6px 10px;
+    text-decoration: none;
+    transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+    background: rgba(0,0,0,0.7);
+}
+
+nav a:hover,
+nav a.activo {
+    background: var(--hot-pink);
+    color: white;
+    transform: scale(1.15) rotate(-3deg);
+    box-shadow: 0 0 15px var(--neon-green);
+    border-color: var(--neon-green);
+}
+
+/* TITUDO */
+.page-title {
+
+    font-family: 'Permanent Marker', cursive;
+    font-size: clamp(32px, 6vw, 64px);
+    text-align: center;
+    color: var(--yellow);
+    text-shadow: 3px 3px var(--hot-pink), -3px -3px var(--electric-blue);
+    margin-bottom: 20px;
+
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    border: 1px solid var(--hot-pink);
+}
+
+.retro-scroll {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marqueeLento 10s linear infinite;
+  
+}
+
+
+@keyframes marqueeLento {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes textGlitch {
+    0% { transform: skew(1deg); }
+    100% { transform: skew(-1deg); filter: hue-rotate(90deg); }
+}
+
+@keyframes textGlitch {
+    0% { transform: skewX(0deg); }
+    5% { transform: skewX(2deg); text-shadow: -3px 3px var(--neon-green), 3px -3px var(--hot-pink); }
+    10% { transform: skewX(-2deg); }
+    15% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }
+}
+
+/* GALERIA */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dibujo-card {
+    background: #000;
+    border: 3px solid var(--hot-pink);
+    padding: 8px;
+    cursor: crosshair;
+    animation: pop 0.5s ease both;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.dibujo-card::before {
+    content: "★";
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    color: var(--yellow);
+    font-size: 24px;
+    text-shadow: 0 0 5px var(--hot-pink);
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+@keyframes pop {
+    from { transform: scale(0.5) rotate(10deg); opacity: 0; }
+    to { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+.dibujo-card:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 0 20px var(--neon-green), 5px 5px 0px var(--electric-blue);
+    border-color: var(--neon-green);
+}
+
+.dibujo-card:hover::before {
+    opacity: 1;
+    transform: rotate(180deg) scale(1.5);
+}
+
+.dibujo-thumb {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 2px dashed white;
+    filter: saturate(1.5) contrast(1.3);
+}
+
+/* VISORe */
+#visorDibujo {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+    z-index: 5000;
+    
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; backdrop-filter: blur(0px); }
+    to { opacity: 1; backdrop-filter: blur(5px); }
+}
+
+#visor3Dcontainer {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; 
+}
+
+#visorImg {
+    max-height: 100%;
+    border: 4px double var(--hot-pink);
+    box-shadow: 0 0 30px var(--hot-pink), inset 0 0 20px var(--electric-blue);
+    animation: zoom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.1s; 
+
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    touch-action: none;         
+}
+
+@keyframes zoom {
+    from { transform: scale(0.2) rotateY(90deg); }
+    to { transform: scale(1) rotateY(0deg); }
+}
+
+#controles3D {
+    display: flex;
+    gap: 15px;
+    margin: 20px;
+}
+
+#controles3D button {
+    background: #000;
+    color: var(--neon-green);
+    border: 2px dashed var(--neon-green);
+    font-family: 'Press Start 2P';
+    padding: 10px 15px;
+    cursor: crosshair;
+    transition: 0.2s;
+}
+
+#controles3D button:hover {
+    transform: scale(1.2) translateY(-5px);
+    background: var(--hot-pink);
+    color: white;
+    border-color: white;
+    box-shadow: 0 10px 0 var(--purple);
+}
+
+#controles3D button:active {
+    transform: scale(1.1) translateY(5px);
+    box-shadow: 0 0 0 var(--purple);
+}
+
+/* INFORMACION QUE CURA */
+#visorInfo {
+    background: rgba(0,0,0,0.9);
+    border: 2px dashed var(--electric-blue);
+    border-left: 10px solid var(--hot-pink);
+    padding: 15px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 5px 5px 0 var(--electric-blue);
+}
+
+#visorNombre {
+    color: var(--yellow);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* LUPE */
+#lupa {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 3px dashed var(--neon-green);
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 20px var(--hot-pink), inset 0 0 10px #000;
+    display: none;
+    z-index: 6000;
+    background-repeat: no-repeat;
+    background-color: rgba(255,0,204,0.1); 
+}
+
+/* BOTON CERRAR */
+#cerrarVisor {
+    margin-top: 20px;
+    background: var(--bg-black);
+    color: var(--hot-pink);
+    font-family: 'Press Start 2P';
+    padding: 10px 20px;
+    border: 3px solid var(--hot-pink);
+    cursor: crosshair;
+    transition: 0.2s;
+}
+#cerrarVisor:hover {
+    background: var(--hot-pink);
+    color: white;
+    box-shadow: 0 0 20px var(--hot-pink);
+    animation: blink 0.5s infinite alternate;
+}
+
+.oculto { display: none !important; }
+/* Este mensaje es para ti santi*/
+/* BARTENDER GIRA */
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #000; border-left: 2px dashed var(--electric-blue); }
+::-webkit-scrollbar-thumb { background: repeating-linear-gradient(45deg, var(--hot-pink), var(--hot-pink) 10px, #000 10px, #000 20px); border: 1px solid white; }
+
+/* Gotitas UWU RAWR 216 82 95 7W7 */
+#pinkTransition {
+    position: fixed;
+    inset: 0;
+    z-index: 99998;
+    pointer-events: none;
+    overflow: hidden;
+    display: flex;
+}
+
+.paint-drop {
+    flex: 1;
+    height: 120vh;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--hot-pink),
+        var(--hot-pink) 20px,
+        #000 20px,
+        #000 40px
+    );
+    border-bottom: 10px solid var(--neon-green);
+    animation: drip 0.8s cubic-bezier(0.75, 0, 0.25, 1) forwards;
+    transform: translateY(-100%);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+}
+
+.paint-drop:nth-child(odd) { border-bottom-left-radius: 50%; border-bottom-right-radius: 10%; }
+.paint-drop:nth-child(even) { border-bottom-left-radius: 10%; border-bottom-right-radius: 50%; }
+
+@keyframes drip {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+/* RUIDO */
+#tvStatic {
+    position: fixed;
+    inset: 0;
+    z-index: 99999; /* Por encima de la pintura */
+    background: #000 url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
+    pointer-events: none;
+    /* Al cargar la página, se desvanece rápido */
+    animation: staticFlicker 0.1s infinite, tvFadeOut 1s ease-out forwards;
+}
+
+/* Cuando se activa la salida, aparece de golpe */
+#tvStatic.show-static {
+    animation: staticFlicker 0.1s infinite, tvFadeIn 0.1s ease-in forwards;
+}
+
+@keyframes tvFadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes tvFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes staticFlicker {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: -100% 50%; }
+}
+
+/* Un gran poder conlleva una gran irresponsabilidad */
+@media (max-width: 768px) {
+    .nav-inner { flex-direction: column; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; }
+    #visor3Dcontainer { height: 40%; }
+    #visorInfo { width: 90%; font-size: 12px; }
+}
+.mood-ascii {
+    display: inline-block;
+    font-family: monospace;
+    margin-right: 10px;
+    animation: jitter 0.2s infinite;
+}
+
+.pencil {
+    display: inline-block;
+    color: var(--yellow);
+    animation: draw 0.4s infinite alternate ease-in-out;
+}
+
+.canvas {
+    display: inline-block;
+    color: var(--neon-green);
+    animation: blink 0.3s infinite;
+}
+
+/* tLABAJA ESCLAVO DE MIELDA */
+@keyframes draw {
+    0% { transform: translateX(0) rotate(0deg); }
+    100% { transform: translateX(5px) rotate(-20deg); }
+}
+
+/* Esfuelzo */
+@keyframes jitter {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, 1px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Elmoso */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+#current-song {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+#current-song:hover {
+    filter: blur(1px);
+    text-shadow: 2px 0 var(--electric-blue), -2px 0 var(--neon-green);
+}
+</style>
+</head>
+
+<body>
+
+<div id="tvStatic"></div> <header>
+    <div class="nav-inner">
+        <div class="brand">
+            <a href="https://www.youtube.com/@Dakore-Dyte" style="text-decoration:none; display:flex; align-items:center; gap:10px;">
+                <img src="/logo.png" alt="logo" style="height:35px; border:2px dashed var(--neon-green);">
+                <div class="sitename">xXx_D4K0R3-DR4W5_xXx</div>
+            </a>
+        </div>
+<nav>
+    <ul>
+        <li><a href="index.html" data-key="nav-inicio">1nic10</a></li>
+        <li><a href="juegos.html" data-key="nav-juegos">ju3g05</a></li>
+        <li><a href="historias.html" data-key="nav-historias">h157or14s</a></li>
+        <li><a href="#" class="activo" data-key="nav-arte">4rt3</a></li>
+    </ul>
+</nav>
+    </div>
+</header>
+
+<main>
+<h1 class="page-title">
+    <span class="retro-scroll">!! MY 4RT G4LL3RY !! >_O</span>
+</h1>
+<div style="text-align: center; margin-bottom: 30px; font-size: 14px; color: var(--electric-blue); background: rgba(0,0,0,0.5); padding: 10px; border: 1px solid var(--hot-pink); display: inline-block; position: relative; left: 50%; transform: translateX(-50%);">
+    Mood: <span class="mood-ascii">(◣_◢)<span class="pencil">✎</span><span class="canvas">_</span></span> 
+    <span style="color:var(--neon-green);">SK3TCHING</span> | 
+Listening to: <span id="current-song" style="color:var(--hot-pink); text-decoration: underline;">Cargando playlist...</span> ♫
+</div>
+
+    <div id="galeria" class="galeria-grid"></div>
+</main>
+
+<div id="visorDibujo" class="oculto">
+    <div id="visor3Dcontainer">
+        <img id="visorImg" src="" draggable="false">
+    </div>
+    
+    <div id="controles3D">
+        <button id="rotarIzq">⟲ L3FT</button>
+        <button id="rotarDer">R1GHT ⟳</button>
+        <button id="zoomIn">Z00M +</button>
+        <button id="zoomOut">Z00M -</button>
+    </div>
+
+    <div id="visorInfo">
+        <div id="visorNombre"></div>
+        <div id="visorDescripcion"></div>
+    </div>
+    
+    <button id="cerrarVisor">[X] CL0S3</button>
+    <div id="lupa"></div>
+</div>
+
+<div id="pinkTransition"></div>
+<script>
+const i18n = {
+
+    "es-mx": {
+        "nav-inicio": "1N1C10",
+        "nav-juegos": "JU3G05",
+        "nav-historias": "H1570R145",
+        "nav-arte": "4R73",
+
+    },
+
+    "es": {
+        "nav-inicio": "1NIC10",
+        "nav-juegos": "JUEG05",
+        "nav-historias": "HIS70RIAS",
+        "nav-arte": "AR7E",
+
+    },
+
+    "en": {
+        "nav-inicio": "H0M3",
+        "nav-juegos": "G4M35",
+        "nav-historias": "570R135",
+        "nav-arte": "4R7",
+
+    }
+};
+
+function translatePage() {
+
+    const rawLang = navigator.language.toLowerCase();
+    let lang = "en";
+
+    if (rawLang.includes('es-mx') || rawLang.includes('es-419') || rawLang.includes('-mx')) {
+        lang = "es-mx";
+    } else if (rawLang.startsWith('es')) {
+        lang = "es";
+    }
+
+    const elements = document.querySelectorAll('[data-key]');
+    
+    elements.forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (i18n[lang][key]) {
+            el.textContent = i18n[lang][key];
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", translatePage);
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const galeria = document.getElementById("galeria");
+    const visor = document.getElementById("visorDibujo");
+    const visorImg = document.getElementById("visorImg");
+    const visorNombre = document.getElementById("visorNombre");
+    const visorDescripcion = document.getElementById("visorDescripcion");
+    const cerrarVisorBtn = document.getElementById("cerrarVisor");
+    const lupa = document.getElementById("lupa");
+
+    let rotacion = 0;
+    let lupaRadio = 75; 
+    let lupaZoom = 2.5;
+    const intervals = {};
+
+    function startInterval(name, fn, ms = 16){
+        if(intervals[name]) clearInterval(intervals[name]);
+        intervals[name] = setInterval(fn, ms);
+    }
+
+const getManifestName = () => {
+    const lang = navigator.language.toLowerCase(); 
+    if (lang.includes('es-mx') || lang.includes('es-419') || lang.includes('-mx')) {
+        return "manifest-mx.json";
+    }
+    if (lang.startsWith('es')) {
+        return "manifest-es.json";
+    }
+
+    return "manifest-en.json";
+};
+    async function cargarGaleria(){
+        try {
+const manifestTarget = getManifestName();
+const res = await fetch(`../dibujos/${manifestTarget}?v=` + Date.now());
+            if (!res.ok) throw new Error(`No se encontró ${manifestTarget}`);
+            
+            const manifestList = await res.json();
+            galeria.innerHTML = "";
+
+            manifestList.forEach(item => {
+                const card = document.createElement("div");
+                card.className = "dibujo-card";
+                
+                card.innerHTML = `<img src="../dibujos/${item.archivoImagen}" class="dibujo-thumb" draggable="false">`;
+                card.addEventListener("click", () => abrirVisor(item));
+                galeria.appendChild(card);
+            });
+        } catch(e) { 
+            console.error("Error:", e);
+            alert("Error de ruta: " + e.message);
+        }
+    }
+
+    function abrirVisor(item){
+        visorImg.src = "/dibujos/" + item.archivoImagen;
+        rotacion = 0;
+        visorImg.style.transform = `rotateY(0deg) scale(1)`;
+        
+        visorNombre.textContent = item.nombre || "Untitled_Artwork.png";
+        visorDescripcion.textContent = item.descripcion || "No description found... x_x";
+        
+        visor.classList.remove("oculto");
+    }
+
+    cerrarVisorBtn.addEventListener("click", () => {
+        visor.classList.add("oculto");
+        lupa.style.display = "none";
+    });
+
+    // --- Lógica de Rotación ---
+    document.getElementById("rotarIzq").addEventListener("pointerdown", () => {
+        startInterval("rotar", () => {
+            rotacion -= 3;
+            visorImg.style.transform = `rotateY(${rotacion}deg)`;
+        });
+    });
+    document.getElementById("rotarDer").addEventListener("pointerdown", () => {
+        startInterval("rotar", () => {
+            rotacion += 3;
+            visorImg.style.transform = `rotateY(${rotacion}deg)`;
+        });
+    });
+    document.addEventListener("pointerup", () => clearInterval(intervals["rotar"]));
+
+    document.getElementById("zoomIn").addEventListener("click", () => {
+        if (lupaRadio < 200) {
+            lupaRadio += 15;
+            lupaZoom += 0.2;
+            actualizarEstiloLupa();
+        }
+    });
+
+    document.getElementById("zoomOut").addEventListener("click", () => {
+        if (lupaRadio > 30) { 
+            lupaRadio -= 15;
+            lupaZoom -= 0.2;
+            actualizarEstiloLupa();
+        }
+    });
+
+    function actualizarEstiloLupa() {
+        lupa.style.width = (lupaRadio * 2) + "px";
+        lupa.style.height = (lupaRadio * 2) + "px";
+    }
+
+    visorImg.addEventListener("pointermove", (e) => {
+        const rect = visorImg.getBoundingClientRect();
+        if(e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) {
+            lupa.style.display = "none"; return;
+        }
+        lupa.style.display = "block";
+
+        lupa.style.left = (e.clientX - lupaRadio) + "px";
+        lupa.style.top = (e.clientY - lupaRadio) + "px";
+        
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const z = lupaZoom;
+
+        lupa.style.backgroundImage = `url('${visorImg.src}')`;
+        lupa.style.backgroundSize = `${rect.width * z}px ${rect.height * z}px`;
+        lupa.style.backgroundPosition = `${-(x * z - lupaRadio)}px ${-(y * z - lupaRadio)}px`;
+    });
+
+    visorImg.addEventListener("pointerleave", () => {
+        lupa.style.display = "none";
+    });
+
+    cargarGaleria();
+});
+
+const transition = document.getElementById("pinkTransition");
+const tvStatic = document.getElementById("tvStatic");
+
+function createPaintDrops() {
+    transition.innerHTML = "";
+    for (let i = 0; i < 6; i++) {
+        const drop = document.createElement("div");
+        drop.className = "paint-drop";
+        drop.style.animationDelay = `${i * 0.1}s`;
+        transition.appendChild(drop);
+    }
+}
+
+document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+        const target = this.getAttribute("target");
+
+        if (!href || href.startsWith("#") || href.startsWith("javascript:") || 
+            target === "_blank" || e.ctrlKey || e.metaKey || e.shiftKey) return;
+
+        e.preventDefault();
+        createPaintDrops();
+        setTimeout(() => { tvStatic.classList.add("show-static"); }, 800);
+        setTimeout(() => { window.location.href = href; }, 1300); 
+    });
+});
+
+window.addEventListener("pageshow", () => {
+    transition.innerHTML = "";
+    tvStatic.classList.remove("show-static");
+});
+
+const playlist = [
+    "Bring Me The Horizon - Chelsea Smile", "Asking Alexandria - Final Episode",
+    "Avril Lavigne - Sk8er Boi", "My Chemical Romance - Helena",
+    "Paramore - Misery Business", "Escape The Fate - Situations",
+    "Bullet For My Valentine - Tears Don't Fall", "Attack Attack! - Stick Stickly", 
+    "Kids - MGMT", "Time to pretend - MGMT", "Juguete - Enjambre", 
+    "Parade - Susumu Hirasawa", "Heist - Ben folds", 
+    "El putón del barrio - Cuarteto de mierda", "Young Folks - Peter Bjorn and John"
+];
+
+function updateMusic() {
+    const songSpan = document.getElementById("current-song");
+    if (songSpan) {
+        const randomSong = playlist[Math.floor(Math.random() * playlist.length)];
+        songSpan.textContent = randomSong;
+    }
+}
+updateMusic();
+setInterval(updateMusic, 30000);
+</script>
+</body>
+</html>

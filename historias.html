@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!--Datos que necesito robar para saber quienes ven mas mi contenido y tenerles prioridad y me refiero a ti sujeto de Piscataway-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X67XNRQN0J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X67XNRQN0J');
+</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dakore-Histories</title>
+    <link rel="icon" href="/logo.png" type="image/png">
+<style>
+:root {
+  --aero-bg: linear-gradient(135deg, #74ebd5 0%, #43C6AC 50%, #191654 100%);
+  --glass: rgba(255, 255, 255, 0.4);
+  --glass-dark: rgba(255, 255, 255, 0.7);
+  --aero-border: 1px solid rgba(255, 255, 255, 0.8);
+  --aero-shadow: 0 8px 32px 0 rgba(0, 100, 150, 0.3);
+  --gloss: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 49%, rgba(255,255,255,0) 51%, rgba(255,255,255,0.1) 100%);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Trebuchet MS", "Helvetica Neue", sans-serif;
+  background: var(--aero-bg);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #0b3b51;
+}
+
+#tvStatic {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #000;
+    opacity: 1;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    animation: staticFlicker 0.1s infinite;
+    transition: opacity 0.8s ease-out;
+}
+
+@keyframes staticFlicker {
+    0% { background-position: 0 0; filter: contrast(150%) brightness(100%); }
+    50% { background-position: 10% 10%; filter: contrast(180%) brightness(120%); }
+    100% { background-position: -5% -5%; filter: contrast(150%) brightness(100%); }
+}
+
+.show-static {
+    opacity: 1 !important;
+    display: block !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%; left: -10%;
+  width: 150%; height: 150%;
+  background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.3) 0%, transparent 20%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.2) 0%, transparent 30%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+header {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: var(--glass);
+  border-bottom: var(--aero-border);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.sitename {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 0 15px rgba(255,255,255,0.8);
+  letter-spacing: 1px;
+}
+
+.controles-superiores {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-aero {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.5);
+  color: #0b3b51;
+  font-weight: 600;
+  font-family: inherit;
+  outline: none;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1), 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+  width: 200px;
+}
+
+.input-aero::placeholder {
+  color: #0b3b51;
+  opacity: 0.7;
+}
+
+.input-aero:focus {
+  background: rgba(255,255,255,0.8);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1), 0 0 15px rgba(255,255,255,0.9);
+  width: 220px;
+}
+
+nav {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  font-size: 14px;
+}
+
+nav a:hover, nav a.activo {
+  background: var(--glass);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: inset 0 2px 5px rgba(255,255,255,0.5), 0 4px 10px rgba(0,0,0,0.1);
+}
+
+main { padding: 40px 20px; }
+
+.shelf-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 50px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.libro-item {
+  width: 100%;
+  max-width: 200px;
+  perspective: 2000px; 
+  margin: 20px;
+}
+
+.libro-cuerpo {
+  width: 100%;
+  aspect-ratio: 2/3;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  cursor: pointer;
+}
+.libro-cuerpo::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  left: 0;
+  background: #e0e0e0;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0.5) 50%, rgba(0,0,0,0.1) 100%);
+  transform: rotateY(-90deg);
+  transform-origin: left;
+  border-radius: 2px;
+}
+
+.libro-item:hover .libro-cuerpo {
+
+  transform: rotateY(-30deg) translateY(-15px) translateZ(100px);
+}
+
+.libro-item:hover .libro-cuerpo {
+  box-shadow: 
+    30px 40px 50px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.libro-portada {
+  position: absolute;
+  inset: 0;
+  background: var(--glass-dark);
+  border-radius: 5px;
+  z-index: 2;
+  backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  /* Evita que la imagen se vea plana */
+  box-shadow: inset -5px 0 15px rgba(0,0,0,0.2); 
+}
+.libro-cuerpo::after {
+  content: "";
+  position: absolute;
+  bottom: -20px; left: 0;
+  width: 100%; height: 20px;
+  background: rgba(0,0,0,0.3);
+  filter: blur(10px);
+  transform: rotateX(90deg);
+}
+
+.hoja {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.cara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 2px 8px 8px 2px;
+}
+
+.cara-frente {
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset -5px 0 15px rgba(0,0,0,.1), inset 2px 0 5px rgba(255,255,255,0.5);
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.hoja.portada .cara-frente::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gloss);
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.cara-atras {
+  transform: rotateY(180deg);
+  background: #f0f8ff;
+  border-left: 2px solid #ccc;
+}
+
+.libro-item:hover .portada { transform: rotateY(-160deg); }
+.libro-item:hover .f1 { transform: rotateY(-150deg); }
+.libro-item:hover .f2 { transform: rotateY(-140deg); }
+
+.pagina-interna {
+  position: absolute;
+  inset: 2px 4px 2px 2px;
+  background-size: cover;
+  background-color: #fff;
+  box-shadow: inset 0 0 15px rgba(0,0,0,.05);
+  border-radius: 2px 6px 6px 2px;
+}
+
+#visor {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 30, 50, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  padding: 20px;
+}
+
+#visor.activo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.visor-card {
+  background: var(--glass-dark);
+  backdrop-filter: blur(25px);
+  padding: 40px;
+  border-radius: 30px; 
+  border: var(--aero-border);
+  box-shadow: var(--aero-shadow), inset 0 0 30px rgba(255,255,255,0.4);
+  
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: 98%;
+  max-width: 1400px;
+  max-height: 95vh;
+  transform: scale(1) translateY(0); 
+  
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              box-shadow 0.3s ease;
+  overflow-y: auto;
+}
+
+#visor.activo .visor-card {
+  transform: scale(1) translateY(0);
+}
+
+.info-panel {
+  background: rgba(255,255,255,0.6);
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.9);
+  
+  display: flex;
+  flex-direction: column;
+  width: 100%;           
+  box-sizing: border-box;
+  
+  min-width: 0;
+}
+
+.info-panel h2 {
+  margin-top: 0;
+  color: #005c8a;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.reseña {
+  background: linear-gradient(to bottom, #ffffff, #e6f7ff);
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin: 8px 0;
+  border: 1px solid #cceeff;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.botones-visor {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 25px;
+  flex-wrap: wrap;
+}
+
+.btn-aero {
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(180deg, #56CCF2 0%, #2F80ED 49%, #1c6ceb 51%, #4ea8de 100%);
+  border: 1px solid #1a5ab3;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(47, 128, 237, 0.4), inset 0 4px 6px rgba(255,255,255,0.6), inset 0 -4px 6px rgba(0,0,0,0.2);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  transition: all 0.2s;
+  text-decoration: none;
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.btn-secundario {
+  background: linear-gradient(180deg, #e0eaf0 0%, #c4d8e2 49%, #a7c5d4 51%, #d2e4eb 100%);
+  border: 1px solid #84a0b0;
+  color: #0b3b51;
+  text-shadow: 0 1px 1px #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1), inset 0 4px 6px rgba(255,255,255,0.8), inset 0 -4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-aero:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(47, 128, 237, 0.6), inset 0 4px 6px rgba(255,255,255,0.8), inset 0 -4px 6px rgba(0,0,0,0.2);
+}
+
+.btn-secundario:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), inset 0 4px 6px rgba(255,255,255,1), inset 0 -4px 6px rgba(0,0,0,0.1);
+}
+
+#visor-libro-item { 
+  margin: auto; 
+  width: 100%;
+  max-width: 280px;
+  flex-shrink: 0;
+}
+#visor .libro-cuerpo { transform: rotateY(-15deg); }
+#visor .hoja.portada { transform: rotateY(-175deg); }
+
+@keyframes volarLibro {
+  0% { transform: scale(0.3) translateY(200px) rotateY(-90deg) rotateZ(-10deg); opacity: 0; }
+  100% { transform: scale(1) translateY(0) rotateY(-15deg) rotateZ(0deg); opacity: 1; }
+}
+
+#visor.activo .libro-cuerpo {
+  animation: volarLibro 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+@media (min-width: 768px) {
+  .visor-card {
+    flex-direction: row;
+    padding: 40px;
+  }
+  .sitename { font-size: 28px; }
+  nav a { font-size: 16px; padding: 8px 18px; }
+  .shelf-container { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 60px; }
+  .libro-item { max-width: 240px; }
+  #visor-libro-item { max-width: 340px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="tvStatic"></div>
+
+<header>
+  <div class="nav-inner">
+    <div class="sitename">Dakore-Histories</div>
+    <div class="controles-superiores">
+      <input type="search" id="buscador" class="input-aero" placeholder="Buscar historia..." />
+<nav>
+  <a href="index.html" id="nav-inicio">Inicio</a>
+  <a href="juegos.html" id="nav-juegos">Juegos</a>
+  <a href="#" class="activo" id="nav-historias">Historias</a>
+  <a href="arte.html" id="nav-arte">Arte</a>
+</nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="shelf-container" id="contenedor-libros"></div>
+</main>
+
+<div id="visor">
+  <div class="visor-card">
+    <div class="libro-item" id="visor-libro-item">
+      <div class="libro-cuerpo abierto">
+        <div class="hoja portada">
+          <div class="cara cara-frente" id="visor-portada"></div>
+          <div class="cara cara-atras"></div>
+        </div>
+        <div class="hoja pagina">
+          <div class="cara cara-frente" id="visor-pagina"></div>
+          <div class="cara cara-atras"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-panel">
+      <h2 id="visor-titulo">Título</h2>
+      <p id="visor-sinopsis">Sinopsis</p>
+      <div id="visor-rating" style="color: #ffaa00; font-size: 1.2em; margin-bottom: 15px;"></div>
+<h4 id="visor-lbl-resenas" style="margin-bottom: 5px; color:#0b3b51;">Reseñas</h4>
+<div id="visor-reseñas" style="margin-bottom: 20px;"></div>
+
+<div class="botones-visor">
+  <a href="#" id="visor-leer" class="btn-aero" target="_blank">LEER</a>
+  <button id="visor-cerrar" class="btn-aero btn-secundario" onclick="cerrarVisor()">Cerrar</button>
+</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script>
+const pdfjsLibExt = window['pdfjs-dist/build/pdf'];
+pdfjsLibExt.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+let libros = [];
+let idiomaActivo = "en"; // Por defecto inglés
+
+// --- DICCIONARIO DE INTERFAZ ---
+const uiText = {
+    mx: {
+        inicio: "Inicio", juegos: "Juegos", historias: "Historias", arte: "Arte",
+        buscar: "Buscar historia...", resenas: "Reseñas", leer: "LEER", cerrar: "Cerrar"
+    },
+    es: {
+        inicio: "Inicio", juegos: "Juegos", historias: "Historias", arte: "Arte",
+        buscar: "Buscar historia...", resenas: "Reseñas", leer: "LEER", cerrar: "Cerrar"
+    },
+    en: {
+        inicio: "Home", juegos: "Games", historias: "Stories", arte: "Art",
+        buscar: "Search story...", resenas: "Reviews", leer: "READ", cerrar: "Close"
+    }
+};
+
+const librosFallback = [
+  {
+    id: "el-oso-azul",
+    titulo: "El oso azul",
+    sinopsis: "Una historia sobre la soledad y la amistad.",
+    rating: "4.7",
+    reseñas: ["Hermoso", "Triste pero lindo"],
+    pdf: "ruta/inexistente.pdf",
+    urlLeer: "https://ejemplo.com/leer-el-oso-azul",
+    colorGen: "linear-gradient(135deg, #00c6ff, #0072ff)"
+  }
+];
+
+const ui = {
+  portada: document.getElementById('visor-portada'),
+  pagina: document.getElementById('visor-pagina'),
+  titulo: document.getElementById('visor-titulo'),
+  sinopsis: document.getElementById('visor-sinopsis'),
+  rating: document.getElementById('visor-rating'),
+  reseñas: document.getElementById('visor-reseñas'),
+  visor: document.getElementById('visor'),
+  btnLeer: document.getElementById('visor-leer'),
+  visorLibroItem: document.getElementById('visor-libro-item'),
+  buscador: document.getElementById('buscador'),
+  // Elementos a traducir
+  navInicio: document.getElementById('nav-inicio'),
+  navJuegos: document.getElementById('nav-juegos'),
+  navHistorias: document.getElementById('nav-historias'),
+  navArte: document.getElementById('nav-arte'),
+  lblResenas: document.getElementById('visor-lbl-resenas'),
+  btnCerrar: document.getElementById('visor-cerrar')
+};
+
+// --- FUNCIÓN PARA TRADUCIR LA INTERFAZ ---
+function actualizarInterfazUI() {
+    const t = uiText[idiomaActivo];
+    if(ui.navInicio) ui.navInicio.textContent = t.inicio;
+    if(ui.navJuegos) ui.navJuegos.textContent = t.juegos;
+    if(ui.navHistorias) ui.navHistorias.textContent = t.historias;
+    if(ui.navArte) ui.navArte.textContent = t.arte;
+    if(ui.buscador) ui.buscador.placeholder = t.buscar;
+    if(ui.lblResenas) ui.lblResenas.textContent = t.resenas;
+    if(ui.btnLeer) ui.btnLeer.textContent = t.leer;
+    if(ui.btnCerrar) ui.btnCerrar.textContent = t.cerrar;
+}
+
+// --- FUNCIÓN PRINCIPAL DE CARGA DE DATOS ---
+async function cargarLibros(){
+  try {
+    const res = await fetch("libros.json", {cache: "no-store"});
+    if(!res.ok) throw new Error("Error en red");
+    const dataTotal = await res.json();
+    
+    const lang = (navigator.language || navigator.userLanguage).toLowerCase();
+    
+    // Selección de idioma
+    if (lang.includes('mx') && Array.isArray(dataTotal['mx'])) {
+        idiomaActivo = "mx";
+    } else if (lang.startsWith('es') && Array.isArray(dataTotal['es'])) {
+        idiomaActivo = "es";
+    } else if (Array.isArray(dataTotal['en'])) {
+        idiomaActivo = "en";
+    } else {
+        // Fallback total
+        const primeraClave = Object.keys(dataTotal)[0];
+        idiomaActivo = primeraClave;
+    }
+    
+    libros = dataTotal[idiomaActivo] || dataTotal['en'] || Object.values(dataTotal)[0];
+    
+    if (!Array.isArray(libros)) throw new Error("Estructura inválida");
+
+  } catch(e) {
+    console.error("Falló la carga del JSON, usando fallback:", e);
+    libros = librosFallback;
+    idiomaActivo = "es"; // Asume español si falla y usa el fallback
+  }
+  
+  actualizarInterfazUI();
+  generarBiblioteca();
+}
+
+// --- LÓGICA DE PDF Y RENDERIZADO (INTACTA) ---
+async function renderPagina(pdf, num, scale){
+  const page = await pdf.getPage(num);
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  const vp = page.getViewport({scale});
+  canvas.width = vp.width;
+  canvas.height = vp.height;
+  await page.render({canvasContext: ctx, viewport: vp}).promise;
+  return canvas.toDataURL("image/jpeg", 0.8);
+}
+
+async function generarBiblioteca(){
+  const cont = document.getElementById("contenedor-libros");
+  cont.innerHTML = "";
+
+  for(let i=0; i<libros.length; i++){
+    const libro = libros[i];
+    let portadaStyle = "";
+    let internaStyle = "";
+    let ratio = 0.666;
+
+    try {
+      const pdf = await pdfjsLibExt.getDocument(libro.pdf).promise;
+      const page1 = await pdf.getPage(1);
+      const vp = page1.getViewport({scale: 1});
+      ratio = vp.width / vp.height;
+      
+      const portada = await renderPagina(pdf, 1, 0.5);
+      const interna = await renderPagina(pdf, 4, 0.5);
+      portadaStyle = `background-image: url('${portada}')`;
+      internaStyle = `background-image: url('${interna}')`;
+    } catch(e) {
+      portadaStyle = `background: ${libro.colorGen || 'linear-gradient(135deg, #1cb5e0, #000851)'}`;
+      internaStyle = `background: #ffffff; text-align:center; padding:20px; color:#333;`;
+    }
+    
+    libro.ratioGuardado = ratio;
+
+    const item = document.createElement("div");
+    item.className = "libro-item";
+    // El buscador filtra por título, que ya estará en el idioma correcto
+    item.dataset.titulo = libro.titulo.toLowerCase();
+    item.style.aspectRatio = ratio.toString();
+    item.innerHTML = `
+      <div class="libro-cuerpo" onclick="abrirVisor(${i})">
+        <div class="pagina-interna" style="${internaStyle}"></div>
+        <div class="hoja f2"><div class="cara cara-frente"></div><div class="cara cara-atras"></div></div>
+        <div class="hoja f1"><div class="cara cara-frente"></div><div class="cara cara-atras"></div></div>
+        <div class="hoja portada">
+          <div class="cara cara-frente" style="${portadaStyle}"></div>
+          <div class="cara cara-atras"></div>
+        </div>
+      </div>`;
+    cont.appendChild(item);
+  }
+}
+
+async function abrirVisor(i){
+  const libro = libros[i];
+  ui.visorLibroItem.style.aspectRatio = libro.ratioGuardado ? libro.ratioGuardado.toString() : "0.666";
+  
+  try {
+    const pdf = await pdfjsLibExt.getDocument(libro.pdf).promise;
+    const portada = await renderPagina(pdf, 1, 0.8);
+    const interna = await renderPagina(pdf, 4, 0.8);
+    ui.portada.style.backgroundImage = `url(${portada})`;
+    ui.pagina.style.backgroundImage = `url(${interna})`;
+    ui.portada.style.background = "none";
+  } catch(e) {
+    ui.portada.style.backgroundImage = "none";
+    ui.pagina.style.backgroundImage = "none";
+    ui.portada.style.background = libro.colorGen || 'linear-gradient(135deg, #1cb5e0, #000851)';
+    ui.pagina.style.background = "#fff";
+  }
+
+  ui.titulo.textContent = libro.titulo;
+  ui.sinopsis.textContent = libro.sinopsis;
+  ui.rating.textContent = "⭐ ".repeat(Math.round(parseFloat(libro.rating))) + " (" + libro.rating + ")";
+
+  if (libro.urlLeer) {
+    ui.btnLeer.href = libro.urlLeer;
+    ui.btnLeer.style.display = "inline-block";
+  } else {
+    ui.btnLeer.style.display = "none";
+  }
+
+  ui.reseñas.innerHTML = "";
+  if(libro.reseñas) {
+    libro.reseñas.forEach(r => {
+      const d = document.createElement("div");
+      d.className = "reseña";
+      d.textContent = `💬 "${r}"`;
+      ui.reseñas.appendChild(d);
+    });
+  }
+  ui.visor.classList.add("activo");
+}
+
+function cerrarVisor(){
+  ui.visor.classList.remove("activo");
+}
+
+// --- EVENTOS ---
+ui.buscador.addEventListener('input', function(e) {
+  const query = e.target.value.toLowerCase();
+  const items = document.querySelectorAll('#contenedor-libros .libro-item');
+  items.forEach(item => {
+    if(item.dataset.titulo.includes(query)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
+
+window.addEventListener("load", () => {
+    const staticOverlay = document.getElementById("tvStatic");
+    setTimeout(() => {
+        staticOverlay.style.opacity = "0";
+        setTimeout(() => staticOverlay.style.display = "none", 800);
+    }, 500);
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        const href = this.getAttribute("href");
+        if (href && !href.startsWith("#") && !href.startsWith("http")) {
+            e.preventDefault();
+            const staticOverlay = document.getElementById("tvStatic");
+            staticOverlay.style.display = "block";
+            void staticOverlay.offsetWidth; 
+            staticOverlay.classList.add("show-static");
+            setTimeout(() => {
+                window.location.href = href;
+            }, 600);
+        }
+    });
+});
+
+// Inicializar
+cargarLibros();
+</script>
+
+</body>
+</html>

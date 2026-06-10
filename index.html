@@ -643,7 +643,7 @@ function traducirInterfaz() {
     }
 }
 
-fetch("/noticias.json?v=" + Date.now())
+fetch("noticias.json?v=" + Date.now())
     .then(response => response.json())
     .then(data => {
         traducirInterfaz();

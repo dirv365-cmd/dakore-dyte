@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tab-title">El Oso azul</title>
+
+    <style>
+    :root {
+        --c-aero: linear-gradient(180deg, #56CCF2 0%, #2F80ED 49%, #1c6ceb 51%, #4ea8de 100%);
+        --glass: rgba(255, 255, 255, 0.25);
+        --glass-border: rgba(255, 255, 255, 0.5);
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+        background: none;
+    }
+
+    .user-bg {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background-color: #111; 
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        filter: none;
+    }
+
+    header {
+        position: relative;
+        z-index: 100;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        background: rgba(255, 255, 255, 0.15);
+        border-bottom: 1px solid var(--glass-border);
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+
+    .btn-regresar {
+        padding: 8px 20px;
+        border-radius: 20px;
+        background: var(--c-aero);
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .libro-titulo {
+        color: white;
+        font-size: 1.2rem;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        margin: 0;
+    }
+
+    .header-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: rgba(0,0,0,0.3);
+        padding: 5px 15px;
+        border-radius: 25px;
+    }
+
+    .page-filter-group { display: flex; gap: 5px; }
+
+    .page-filter-group input {
+        width: 80px;
+        padding: 5px 10px;
+        border-radius: 15px;
+        border: none;
+        outline: none;
+        text-align: center;
+    }
+
+    .page-filter-group button {
+        background: var(--c-aero);
+        color: white;
+        border: none;
+        padding: 5px 12px;
+        border-radius: 15px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .switch-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        font-size: 0.9rem;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 36px;
+        height: 20px;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+        position: absolute; cursor: pointer;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: #ccc; transition: .4s;
+        border-radius: 20px;
+    }
+    .slider:before {
+        position: absolute; content: "";
+        height: 14px; width: 14px; left: 3px; bottom: 3px;
+        background-color: white; transition: .4s;
+        border-radius: 50%;
+    }
+    input:checked + .slider { background: var(--c-aero); }
+    input:checked + .slider:before { transform: translateX(16px); }
+
+    .main-wrapper {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 60px);
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .flipbook-container {
+        width: 100%;
+        max-width: 900px;
+        height: 75vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255,255,255,0.12);
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+
+    #flipbook { box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+    .page { background-color: white; overflow: hidden; }
+    canvas { width: 100%; height: 100%; display: block; }
+
+    .page-indicator {
+        margin-top: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 6px 18px;
+        border-radius: 20px;
+        color: white;
+        font-size: 0.9rem;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--c-aero);
+        color: white;
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 20;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: 0.3s;
+    }
+    .nav-btn:hover { transform: translateY(-50%) scale(1.05); }
+    .prev-btn { left: 40px; }
+    .next-btn { right: 40px; }
+
+    .simple-view .flipbook-container {
+        display: block;
+        overflow-y: auto;
+        height: 85vh;
+        padding: 20px;
+        background: rgba(0,0,0,0.6);
+    }
+    .simple-view #flipbook {
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; 
+    }
+    .simple-view .page {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        width: auto !important;
+        max-width: 100%;
+        height: auto !important;
+    }
+    .simple-view .nav-btn {
+        display: none !important;
+    }
+    
+    .simple-view .page-indicator {
+        display: block !important;
+        position: absolute;
+        bottom: 10px;
+        z-index: 50;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    .loader-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(10,10,10,0.6);
+        color: white;
+        flex-direction: column;
+        gap: 16px;
+        transition: opacity 0.5s ease, visibility 0.5s;
+    }
+    .loader-overlay.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    .loader-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 24px;
+        border-radius: 12px;
+        background: rgba(0,0,0,0.45);
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .spinner {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 4px solid rgba(255,255,255,0.15);
+        border-top-color: #fff;
+        animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 768px) {
+        .nav-btn { width: 40px; height: 40px; }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+        .flipbook-container { height: 60vh; padding: 10px; }
+        .header-controls { flex-direction: column; gap: 10px; width: 100%; padding: 10px; }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="user-bg" aria-hidden="true"></div>
+
+    <div id="loader" class="loader-overlay" role="status" aria-live="polite">
+        <div class="loader-box">
+            <div class="spinner" aria-hidden="true"></div>
+            <div>
+                <div style="font-weight:700; font-size:1rem;">Cargando...</div>
+                <div id="loader-sub" style="font-size:0.85rem; opacity:0.85;">Preparando contenido</div>
+            </div>
+        </div>
+    </div>
+
+    <header id="site-header">
+        <a href="/retro/ascendente.html" class="btn-regresar">◀ VOLVER</a>
+        <h1 class="libro-titulo" id="display-title">Cargando...</h1>
+        
+        <div class="header-controls">
+            <div class="page-filter-group">
+                <input type="text" id="page-input" placeholder="Ej: 3,7 o 1-4" title="Escribe hojas específicas a cargar">
+                <button id="btn-filter">Filtrar</button>
+            </div>
+            <div class="switch-group">
+                <span>Modo Simple</span>
+                <label class="switch" aria-label="Cambiar modo de vista">
+                    <input type="checkbox" id="view-mode-switch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-wrapper" id="main-wrapper">
+        <button id="btn-prev" class="nav-btn prev-btn" aria-label="Página anterior">◀</button>
+
+        <div class="flipbook-container" aria-live="polite">
+            <div id="flipbook"></div>
+        </div>
+
+        <button id="btn-next" class="nav-btn next-btn" aria-label="Página siguiente">▶</button>
+
+        <div class="page-indicator" aria-hidden="false">
+            <span id="current-page">1</span> / <span id="total-pages">0</span>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+    let pdfDoc = null;
+    let isSimpleMode = false;
+    let pagesToRender = [];
+    let totalPages = 0;
+
+    const loader = document.getElementById('loader');
+    const loaderSub = document.getElementById('loader-sub');
+    const flipbookContainer = document.querySelector('.flipbook-container');
+    const mainWrapper = document.getElementById('main-wrapper');
+    
+    let flipbookElement = document.getElementById('flipbook'); 
+    
+    const viewModeSwitch = document.getElementById('view-mode-switch');
+    const pageInput = document.getElementById('page-input');
+    const btnFilter = document.getElementById('btn-filter');
+
+    function configTouch() {
+        const pBtn = document.getElementById('btn-prev');
+        const nBtn = document.getElementById('btn-next');
+        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+            if (pBtn) pBtn.style.display = 'none';
+            if (nBtn) nBtn.style.display = 'none';
+        }
+    }
+    configTouch();
+
+    function showLoader(text) {
+        if (text) loaderSub.textContent = text;
+        loader.classList.remove('hidden');
+    }
+    function hideLoader() {
+        loader.classList.add('hidden');
+    }
+
+    showLoader('Descargando PDF...');
+
+    const params = new URLSearchParams(window.location.search);
+    const urlDelPDF = params.get('file') || '/historias/El OSO AZUL PRIMER CAPITULO.pdf';
+    const tituloLibro = params.get('title') || 'El Oso azul';
+    
+    const displayTitleEl = document.getElementById('display-title');
+    if (displayTitleEl) displayTitleEl.textContent = tituloLibro;
+
+    function parsePageSelection(selectionStr, maxPages) {
+        if (!selectionStr.trim()) return Array.from({length: maxPages}, (_, i) => i + 1);
+        
+        const pages = new Set();
+        const parts = selectionStr.split(',');
+        for (let part of parts) {
+            if (part.includes('-')) {
+                const [start, end] = part.split('-').map(n => parseInt(n.trim()));
+                if (!isNaN(start) && !isNaN(end)) {
+                    for (let i = start; i <= end; i++) {
+                        if (i >= 1 && i <= maxPages) pages.add(i);
+                    }
+                }
+            } else {
+                const page = parseInt(part.trim());
+                if (!isNaN(page) && page >= 1 && page <= maxPages) pages.add(page);
+            }
+        }
+        return Array.from(pages).sort((a, b) => a - b);
+    }
+
+    async function cargarPDF(url) {
+        try {
+            pdfDoc = await pdfjsLib.getDocument(url).promise;
+            totalPages = pdfDoc.numPages;
+            
+            const totalPagesEl = document.getElementById('total-pages');
+            if (totalPagesEl) totalPagesEl.textContent = totalPages;
+
+            pagesToRender = Array.from({length: totalPages}, (_, i) => i + 1);
+            
+            await renderizarVistas();
+        } catch (error) {
+            console.error("Error al cargar el PDF:", error);
+            if(flipbookElement) {
+                flipbookElement.innerHTML = `<h3 style="color: white; text-align: center;">Error al cargar el PDF.<br>Revisa la ruta.</h3>`;
+            }
+            hideLoader();
+        }
+    }
+
+async function renderizarVistas() {
+        if (!pdfDoc) return;
+
+        showLoader('Preparando páginas...');
+
+        if (window._pageFlipInstance) {
+            try { window._pageFlipInstance.destroy(); } catch (e) { }
+            window._pageFlipInstance = null;
+        }
+
+        if (flipbookElement) flipbookElement.remove();
+        flipbookElement = document.createElement('div');
+        flipbookElement.id = 'flipbook';
+        flipbookContainer.appendChild(flipbookElement);
+
+        if (isSimpleMode) {
+            mainWrapper.classList.add('simple-view');
+        } else {
+            mainWrapper.classList.remove('simple-view');
+        }
+
+        const baseScale = Math.min(1, Math.max(0.8, window.innerWidth / 1200));
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+        let cssPageWidth = 0;
+        let cssPageHeight = 0;
+
+        for (let i = 0; i < pagesToRender.length; i++) {
+            const pageNum = pagesToRender[i];
+            const page = await pdfDoc.getPage(pageNum);
+            const viewport = page.getViewport({ scale: baseScale });
+
+            if (i === 0) {
+                cssPageWidth = Math.floor(viewport.width);
+                cssPageHeight = Math.floor(viewport.height);
+            }
+
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d', { alpha: false });
+            canvas.width = Math.floor(viewport.width * ratio);
+            canvas.height = Math.floor(viewport.height * ratio);
+            canvas.style.width = '100%';
+            canvas.style.height = isSimpleMode ? 'auto' : '100%';
+            
+            context.setTransform(ratio, 0, 0, ratio, 0, 0);
+            await page.render({ canvasContext: context, viewport: viewport }).promise;
+
+            const pageDiv = document.createElement('div');
+            pageDiv.className = 'page';
+            
+            pageDiv.dataset.pageNum = pageNum; 
+            
+            pageDiv.appendChild(canvas);
+            flipbookElement.appendChild(pageDiv);
+        }
+
+        if (isSimpleMode) {
+            const domPages = document.querySelectorAll('#flipbook .page');
+            domPages.forEach(p => {
+                p.style.width = `${cssPageWidth}px`;
+                p.style.height = 'auto';
+            });
+
+
+            const observerOptions = {
+                root: flipbookContainer,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      
+                        const visiblePageNum = entry.target.dataset.pageNum;
+                        const cur = document.getElementById('current-page');
+                        if (cur) cur.textContent = visiblePageNum;
+                    }
+                });
+            }, observerOptions);
+
+            domPages.forEach(p => observer.observe(p));
+
+
+            setTimeout(() => hideLoader(), 350);
+        } else {
+
+            if (pagesToRender.length === 1) {
+                const dummy = document.createElement('div');
+                dummy.className = 'page';
+                dummy.style.backgroundColor = '#222';
+                flipbookElement.appendChild(dummy);
+            }
+
+            const containerW = flipbookContainer.clientWidth || window.innerWidth;
+            const containerH = flipbookContainer.clientHeight || window.innerHeight * 0.75;
+            const fitScale = Math.min(containerW / cssPageWidth, containerH / cssPageHeight, 1);
+
+            const finalW = Math.round(cssPageWidth * fitScale);
+            const finalH = Math.round(cssPageHeight * fitScale);
+            
+            document.querySelectorAll('#flipbook .page').forEach(p => {
+                p.style.width = `${finalW}px`;
+                p.style.height = `${finalH}px`;
+            });
+
+            const mostrarPortada = (pagesToRender.length === totalPages);
+            
+            iniciarRevista(finalW, finalH, mostrarPortada);
+        }
+    }
+
+    function iniciarRevista(pageCssWidth, pageCssHeight, activarPortada) {
+        const pageFlip = new St.PageFlip(flipbookElement, {
+            width: pageCssWidth,
+            height: pageCssHeight,
+            size: "stretch",
+            minWidth: 300,
+            maxWidth: 1000,
+            minHeight: 400,
+            maxHeight: 1200,
+            drawShadow: true,
+            showCover: activarPortada,
+            flippingTime: 800,
+            usePortrait: window.innerWidth < 768,
+            startPage: 0,
+            showPageCorners: true,
+            clickEventForward: true,
+            useMouseEvents: true
+        });
+
+        window._pageFlipInstance = pageFlip;
+        pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+
+        const pBtn = document.getElementById('btn-prev');
+        const nBtn = document.getElementById('btn-next');
+        if (pBtn && nBtn) {
+            const newP = pBtn.cloneNode(true);
+            const newN = nBtn.cloneNode(true);
+            pBtn.parentNode.replaceChild(newP, pBtn);
+            nBtn.parentNode.replaceChild(newN, nBtn);
+            newP.addEventListener('click', () => pageFlip.flipPrev());
+            newN.addEventListener('click', () => pageFlip.flipNext());
+        }
+
+        pageFlip.on('flip', (e) => {
+            const cur = document.getElementById('current-page');
+            if (cur) cur.textContent = pagesToRender[e.data] || (e.data + 1);
+        });
+
+        setTimeout(() => hideLoader(), 350);
+    }
+    viewModeSwitch.addEventListener('change', (e) => {
+        isSimpleMode = e.target.checked;
+        if (pdfDoc) renderizarVistas();
+    });
+
+    btnFilter.addEventListener('click', () => {
+        const inputVal = pageInput.value;
+        const newPages = parsePageSelection(inputVal, totalPages);
+        
+        if (newPages.length === 0) {
+            alert("Selección inválida. Mostrando todas las páginas.");
+            pagesToRender = Array.from({length: totalPages}, (_, i) => i + 1);
+        } else {
+            pagesToRender = newPages;
+        }
+        
+        const totalPagesEl = document.getElementById('total-pages');
+        if (totalPagesEl) totalPagesEl.textContent = totalPages; 
+        
+        const cur = document.getElementById('current-page');
+        if (cur) cur.textContent = pagesToRender[0] || 1;
+
+        if (pdfDoc) renderizarVistas();
+    });
+
+    pageInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            btnFilter.click();
+        }
+    });
+
+    cargarPDF(urlDelPDF);
+});
+</script>
+</body>
+</html>
