@@ -333,26 +333,22 @@ main {
     100% { transform: translateY(0); }
 }
 @media (max-width: 768px) {
-    header {
-        padding: 6px 4px !important;
-    }
-    header .nav-inner { 
-        justify-content: center; 
-        gap: 6px !important;
-    }
+    header .nav-inner { justify-content: center; }
+    body { font-size: 18px; }
     
-    nav a {
-        padding: 4px 10px !important;
-        font-size: 14px !important;
-    }
-    
-    body { font-size: 20px; } 
-
     main { 
         left: 2.5% !important; 
         transform: none !important;
-        width: 95%;
-        top: 210px !important;
+        width: 95% !important;
+    }
+
+    #contenedorNoticias {
+        margin: 5px !important;
+        padding: 10px !important;
+    }
+
+    .noticia-card {
+        padding: 10px 0 !important;
     }
 }
     </style>
