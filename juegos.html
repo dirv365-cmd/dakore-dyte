@@ -321,17 +321,15 @@
 </div>
 
 <script>
-
-
     let idiomaActivo = "en";
 
     const uiText = {
-        mx: { 
+        "es-mx": { 
             inicio: "INICIO", 
             juegos: "JUEGOS", 
             historias: "HISTORIAS", 
             arte: "ARTE", 
-            titulo: "SELECCIONA UN JUEGO", 
+            titulo: "SELECOIONA UN JUEGAZO", 
             sub: "Bienvenido al menú de JUEGOS, selecciona uno de los siguientes juegos para saber de qué trata, cómo te trata y el porqué te trata. Si no hay juegos... Recuerda que: El accidente no fue culpa tuya." 
         },
         es: { 
@@ -339,7 +337,7 @@
             juegos: "JUEGOS", 
             historias: "HISTORIAS", 
             arte: "ARTE", 
-            titulo: "SELECCIÓN DE JUEGARDO", 
+            titulo: "SELECCIÓN DE JUEGARDO",
             sub: "Bienvenido al menú de JUEGOS, selecciona uno de los siguientes juegos para saber de qué trata, cómo te trata y el porqué te trata. Si no hay juegos... Recuerda que: El accidente no fue culpa tuya." 
         },
         en: { 
@@ -361,14 +359,15 @@
     };
 
     function actualizarInterfazUI() {
-        const t = uiText[idiomaActivo];
-        document.getElementById("nav-inicio").textContent = t.inicio;
-        document.getElementById("nav-juegos").textContent = t.juegos;
-        document.getElementById("nav-historias").textContent = t.historias;
-        document.getElementById("nav-arte").textContent = t.arte;
+        const t = uiText[idiomaActivo] || uiText["en"]; // Respaldo por si acaso
         
-        document.getElementById("menu-titulo").textContent = t.titulo;
-        document.getElementById("menu-subtitulo").textContent = t.sub;
+        if (document.getElementById("nav-inicio")) document.getElementById("nav-inicio").textContent = t.inicio;
+        if (document.getElementById("nav-juegos")) document.getElementById("nav-juegos").textContent = t.juegos;
+        if (document.getElementById("nav-historias")) document.getElementById("nav-historias").textContent = t.historias;
+        if (document.getElementById("nav-arte")) document.getElementById("nav-arte").textContent = t.arte;
+        
+        if (document.getElementById("menu-titulo")) document.getElementById("menu-titulo").textContent = t.titulo;
+        if (document.getElementById("menu-subtitulo")) document.getElementById("menu-subtitulo").textContent = t.sub;
 
         document.title = "Dakore-" + t.juegos;
 
@@ -381,17 +380,15 @@
     function cargarSistemaTraduccion() {
         try {
             const langBrowser = (navigator.language || navigator.userLanguage).toLowerCase();
+            const formatoCorto = langBrowser.split('-')[0];
             
-            if (langBrowser.includes('mx') && uiText['mx']) {
-                idiomaActivo = "mx";
+            if (uiText[langBrowser]) {
+                idiomaActivo = langBrowser;
+            } else if (uiText[formatoCorto]) {
+
+                idiomaActivo = formatoCorto;
             } else {
-                const formatoCorto = langBrowser.split('-')[0];
-                
-                if (uiText[formatoCorto]) {
-                    idiomaActivo = formatoCorto;
-                } else {
-                    idiomaActivo = "en"; 
-                }
+                idiomaActivo = "es"; 
             }
 
             actualizarInterfazUI();
@@ -402,12 +399,11 @@
         }
     }
 
-    document.addEventListener("DOMContentLoaded", cargarSistemaTraduccion);
-
     const transition = document.getElementById("gameTransition");
     const tvStatic = document.getElementById("tvStatic");
 
     function createPaintDrops() {
+        if (!transition) return;
         transition.innerHTML = "";
         for (let i = 0; i < 6; i++) {
             const drop = document.createElement("div");
@@ -416,7 +412,6 @@
             transition.appendChild(drop);
         }
     }
-
     document.querySelectorAll("a[href]").forEach(link => {
         link.addEventListener("click", function(e) {
             const href = this.getAttribute("href");
@@ -427,17 +422,17 @@
 
             e.preventDefault();
             createPaintDrops();
-            setTimeout(() => { tvStatic.classList.add("show-static"); }, 800);
+            if (tvStatic) setTimeout(() => { tvStatic.classList.add("show-static"); }, 800);
             setTimeout(() => { window.location.href = href; }, 1300); 
         });
     });
 
     window.addEventListener("pageshow", () => {
-        transition.innerHTML = "";
-        tvStatic.classList.remove("show-static");
+        if (transition) transition.innerHTML = "";
+        if (tvStatic) tvStatic.classList.remove("show-static");
     });
     
-const basePersonajes = {
+    const basePersonajes = {
         defecto: {
             gif: "imagenes/renders_juegos/C-C-R.gif",
             paleta: {
@@ -502,7 +497,6 @@ const basePersonajes = {
 
         aplicarPaletaCSS(personaje.paleta);
     }
-
     document.addEventListener("DOMContentLoaded", () => {
         cargarSistemaTraduccion(); 
         cargarConfiguracionPersonaje();
