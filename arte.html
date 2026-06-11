@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>xXx_D4k0r3-DR4W5_xXx</title>
     <link rel="icon" href="imgenes/logotipos/logo_dakore.png" type="image/png">
-    <!-- Tipografías robadas legalmente de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DotGothic16&family=Permanent+Marker&display=swap" rel="stylesheet">
     
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-X67XNRQN0J"></script>
@@ -128,14 +127,12 @@ nav a.activo {
 
 /* TITUDO */
 .page-title {
-
     font-family: 'Permanent Marker', cursive;
     font-size: clamp(32px, 6vw, 64px);
     text-align: center;
     color: var(--yellow);
     text-shadow: 3px 3px var(--hot-pink), -3px -3px var(--electric-blue);
     margin-bottom: 20px;
-
     width: 60%;
     margin-left: auto;
     margin-right: auto;
@@ -149,22 +146,11 @@ nav a.activo {
     display: inline-block;
     padding-left: 100%;
     animation: marqueeLento 10s linear infinite;
-  
 }
-
 
 @keyframes marqueeLento {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes textGlitch {
-    0% { transform: skew(1deg); }
-    100% { transform: skew(-1deg); filter: hue-rotate(90deg); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 @keyframes textGlitch {
@@ -232,7 +218,7 @@ nav a.activo {
     filter: saturate(1.5) contrast(1.3);
 }
 
-/* VISORe */
+/* VISOR */
 #visorDibujo {
     position: fixed;
     inset: 0;
@@ -244,7 +230,6 @@ nav a.activo {
     justify-content: center;
     animation: fadeIn 0.3s ease;
     z-index: 5000;
-    
 }
 
 @keyframes fadeIn {
@@ -261,13 +246,15 @@ nav a.activo {
     perspective: 1000px; 
 }
 
+/* AJUSTE DE MEDIDAS FIJAS DE LA IMAGEN EN PC */
 #visorImg {
-    max-height: 100%;
+    width: 632px;
+    max-width: 100%;
+    height: auto;
     border: 4px double var(--hot-pink);
     box-shadow: 0 0 30px var(--hot-pink), inset 0 0 20px var(--electric-blue);
     animation: zoom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transition: transform 0.1s; 
-
     pointer-events: auto;
     user-select: none;
     -webkit-user-drag: none;
@@ -328,7 +315,7 @@ nav a.activo {
     text-transform: uppercase;
 }
 
-/* LUPE */
+/* LUPA */
 #lupa {
     position: absolute;
     width: 300px;
@@ -362,13 +349,11 @@ nav a.activo {
 }
 
 .oculto { display: none !important; }
-/* Este mensaje es para ti santi*/
-/* BARTENDER GIRA */
 ::-webkit-scrollbar { width: 12px; }
 ::-webkit-scrollbar-track { background: #000; border-left: 2px dashed var(--electric-blue); }
 ::-webkit-scrollbar-thumb { background: repeating-linear-gradient(45deg, var(--hot-pink), var(--hot-pink) 10px, #000 10px, #000 20px); border: 1px solid white; }
 
-/* Gotitas UWU RAWR 216 82 95 7W7 */
+/* Gotitas UWU */
 #pinkTransition {
     position: fixed;
     inset: 0;
@@ -406,41 +391,34 @@ nav a.activo {
 #tvStatic {
     position: fixed;
     inset: 0;
-    z-index: 99999; /* Por encima de la pintura */
+    z-index: 99999;
     background: #000 url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
     pointer-events: none;
-    /* Al cargar la página, se desvanece rápido */
     animation: staticFlicker 0.1s infinite, tvFadeOut 1s ease-out forwards;
 }
 
-/* Cuando se activa la salida, aparece de golpe */
 #tvStatic.show-static {
     animation: staticFlicker 0.1s infinite, tvFadeIn 0.1s ease-in forwards;
 }
 
-@keyframes tvFadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-@keyframes tvFadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
+@keyframes tvFadeOut { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes tvFadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
 @keyframes staticFlicker {
     0% { background-position: 0 0; }
     50% { background-position: 100% 100%; }
     100% { background-position: -100% 50%; }
 }
 
-/* Un gran poder conlleva una gran irresponsabilidad */
+/* RESPONSIVE & MEDIDAS EN PANTALLAS CHICAS */
 @media (max-width: 768px) {
     .nav-inner { flex-direction: column; gap: 15px; }
     nav ul { flex-wrap: wrap; justify-content: center; }
     #visor3Dcontainer { height: 40%; }
     #visorInfo { width: 90%; font-size: 12px; }
+    /* AJUSTE DE ANCHO DE LA IMAGEN EN TELEFONOS */
+    #visorImg { width: 316px; }
 }
+
 .mood-ascii {
     display: inline-block;
     font-family: monospace;
@@ -460,13 +438,11 @@ nav a.activo {
     animation: blink 0.3s infinite;
 }
 
-/* tLABAJA ESCLAVO DE MIELDA */
 @keyframes draw {
     0% { transform: translateX(0) rotate(0deg); }
     100% { transform: translateX(5px) rotate(-20deg); }
 }
 
-/* Esfuelzo */
 @keyframes jitter {
     0% { transform: translate(0, 0); }
     25% { transform: translate(1px, -1px); }
@@ -475,7 +451,6 @@ nav a.activo {
     100% { transform: translate(0, 0); }
 }
 
-/* Elmoso */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
@@ -550,30 +525,10 @@ Listening to: <span id="current-song" style="color:var(--hot-pink); text-decorat
 <div id="pinkTransition"></div>
 <script>
 const i18n = {
-    "mx": {
-        "nav-inicio": "1N1C10",
-        "nav-juegos": "JU3G05",
-        "nav-historias": "H1570R145",
-        "nav-arte": "4R73",
-    },
-    "es": {
-        "nav-inicio": "1NIC10",
-        "nav-juegos": "JUEG05",
-        "nav-historias": "HIS70RIAS",
-        "nav-arte": "AR7E",
-    },
-    "en": {
-        "nav-inicio": "H0M3",
-        "nav-juegos": "G4M35",
-        "nav-historias": "570R135",
-        "nav-arte": "4R7",
-    },
-    "pt": {
-        "nav-inicio": "1N1C10",
-        "nav-juegos": "J0G05",
-        "nav-historias": "H1570R145",
-        "nav-arte": "4R73",
-    }
+    "mx": { "nav-inicio": "1N1C10", "nav-juegos": "JU3G05", "nav-historias": "H1570R145", "nav-arte": "4R73" },
+    "es": { "nav-inicio": "1NIC10", "nav-juegos": "JUEG05", "nav-historias": "HIS70RIAS", "nav-arte": "AR7E" },
+    "en": { "nav-inicio": "H0M3", "nav-juegos": "G4M35", "nav-historias": "570R135", "nav-arte": "4R7" },
+    "pt": { "nav-inicio": "1N1C10", "nav-juegos": "J0G05", "nav-historias": "H1570R145", "nav-arte": "4R73" }
 };
 
 function getSystemLanguage() {
@@ -599,7 +554,6 @@ function translatePage() {
         }
     });
 }
-
 document.addEventListener("DOMContentLoaded", translatePage);
 </script>
 
@@ -626,8 +580,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function cargarGaleria(){
         try {
             const lang = getSystemLanguage();
-            //
-            const res = await fetch(`./arte.json?v=` + Date.now());
+            const res = await fetch("./arte.json?v=1.4");
             if (!res.ok) throw new Error(`No se encontró el archivo arte.json`);
             
             const manifestData = await res.json();
@@ -638,7 +591,6 @@ document.addEventListener("DOMContentLoaded", () => {
             manifestList.forEach(item => {
                 const card = document.createElement("div");
                 card.className = "dibujo-card";
-                
                 card.innerHTML = `<img src="${item.ruta}" class="dibujo-thumb" draggable="false">`;
                 card.addEventListener("click", () => abrirVisor(item));
                 galeria.appendChild(card);
@@ -653,10 +605,8 @@ document.addEventListener("DOMContentLoaded", () => {
         visorImg.src = item.ruta;
         rotacion = 0;
         visorImg.style.transform = `rotateY(0deg) scale(1)`;
-        
         visorNombre.textContent = item.titulo || "Untitled_Artwork.png";
         visorDescripcion.textContent = item.descripcion || "No description found... x_x";
-        
         visor.classList.remove("oculto");
     }
 
@@ -665,7 +615,6 @@ document.addEventListener("DOMContentLoaded", () => {
         lupa.style.display = "none";
     });
 
-    //Lógica de Rotación
     document.getElementById("rotarIzq").addEventListener("pointerdown", () => {
         startInterval("rotar", () => {
             rotacion -= 3;
@@ -715,9 +664,22 @@ document.addEventListener("DOMContentLoaded", () => {
         const y = e.clientY - rect.top;
         const z = lupaZoom;
 
+        const cosVal = Math.cos(rotacion * Math.PI / 180);
+        const isMirrored = cosVal < 0;
+
         lupa.style.backgroundImage = `url('${visorImg.src}')`;
         lupa.style.backgroundSize = `${rect.width * z}px ${rect.height * z}px`;
-        lupa.style.backgroundPosition = `${-(x * z - lupaRadio)}px ${-(y * z - lupaRadio)}px`;
+
+        if (isMirrored) {
+
+            lupa.style.transform = "scaleX(-1)";
+            const correctedX = rect.width - x;
+            lupa.style.backgroundPosition = `${-(correctedX * z - lupaRadio)}px ${-(y * z - lupaRadio)}px`;
+        } else {
+            
+            lupa.style.transform = "none";
+            lupa.style.backgroundPosition = `${-(x * z - lupaRadio)}px ${-(y * z - lupaRadio)}px`;
+        }
     });
 
     visorImg.addEventListener("pointerleave", () => {
