@@ -626,8 +626,9 @@ document.addEventListener("DOMContentLoaded", () => {
     async function cargarGaleria(){
         try {
             const lang = getSystemLanguage();
-            const res = await fetch(`..arte.json?v=` + Date.now());
-            if (!res.ok) throw new Error(`No se encontró el archivo manifest.json`);
+            // CORREGIDO: Ruta apuntando a arte.json en la raíz junto al HTML
+            const res = await fetch(`./arte.json?v=` + Date.now());
+            if (!res.ok) throw new Error(`No se encontró el archivo arte.json`);
             
             const manifestData = await res.json();
             galeria.innerHTML = "";
