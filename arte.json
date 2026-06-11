@@ -50,8 +50,8 @@
       "titulo": "Alexito y Maya Costa Brava",
       "ruta": "/imagenes/arte/alexito-costa.png",
       "descripcion": "Yo los ayudo pibes."
-    } //este se puede borrar con mas facilidad, es lo malo de dibujar parejas que no son toxicas, no sabes cuando terminan jejeje.
-    ,  
+      "nota": "este se puede borrar con mas facilidad, es lo malo de dibujar parejas que no son toxicas, no sabes cuando terminan jejeje."
+    },  
     {
       "id": "rata-emo",
       "titulo": "Rata Emo",
