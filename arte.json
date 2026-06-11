@@ -1,0 +1,310 @@
+{
+  "mx": [
+    {
+      "id": "djsaurus-dr",
+      "titulo": "Djsaurus Boceto",
+      "ruta": "/imagenes/arte/djsaurus.png",
+      "descripcion": "Djsaurus es una bestía mecanica, muy poderosa e increible, se cuenta que cuando djsaurus se durmió dos dias seguidos se formaron los dias sabado y domingo. La mejor parte es cuando djsaurus djsaurea en los sujetos malos."
+    },   {
+      "id": "gecko-darkness",
+      "titulo": "El gecko en la oscuridad",
+      "ruta": "/imagenes/arte/gecko-darkness.png",
+      "descripcion": "Es el bendito gecko que sale cuando la pagina esta en mantenimiento, es hermoso y desconocido."
+    },   {
+      "id": "MatDib",
+      "titulo": "Mateo",
+      "ruta": "/imagenes/arte/Matdib.png",
+      "descripcion": "Lo mas complicado fue intentar hacer rostros tan precisos, ahora el problema es que parece hecho por IA por los colores tan culeros y mierdosos que utilicé."
+    },   {
+      "id": "edgar-dr",
+      "titulo": "Edgar",
+      "ruta": "/imagenes/arte/edgar-dr.png",
+      "descripcion": "Una deidad griega hecha carne, que fue plasmada en un dibujo pixel art que no le hace honor a su belleza."
+    },   {
+      "id": "maho-dr",
+      "titulo": "Maho Buttercup",
+      "ruta": "/imagenes/arte/mahobt-dr.png",
+      "descripcion": "Una entidad de los backrooms muy federica, bueh habló brad pitt, lo la-mento, es para probar la localización mahito, aunque es personal y esas cosas."
+    },   {
+      "id": "jan-dr",
+      "titulo": "Janee Daltonica",
+      "ruta": "/imagenes/arte/janda-dr.png",
+      "descripcion": "¿Distingues?, que delicia, realmente solo te hablé 3 veces, pero diste like a la publicacion antes que todos asi que aquí estas..."
+    },   {
+      "id": "shoo-dr",
+      "titulo": "Shoo Tv",
+      "ruta": "/imagenes/arte/shoo-dr.png",
+      "descripcion": "Sé que mientes, ¡lo odias en su totalidad!."
+    },   {
+      "id": "fertr-dr",
+      "titulo": "Fersita Trolla",
+      "ruta": "/imagenes/arte/fertr-dr.png",
+      "descripcion": "Pues de gratis, toma, espabila coño, que de lo contrario te seguirán albureando en tus streams (y me seguiré burlando de ello)."
+    },   {
+      "id": "hamantha-dr",
+      "titulo": "Hamantha",
+      "ruta": "/imagenes/arte/hamantha.png",
+      "descripcion": "Dificil de ignorar, con ganas de darle una mordida a esa carita carnosa."
+    },   {
+      "id": "alexcostabrav-dr",
+      "titulo": "Alexito y Maya Costa Brava",
+      "ruta": "/imagenes/arte/alexito-costa.png",
+      "descripcion": "Yo los ayudo pibes."
+    } //este se puede borrar con mas facilidad, es lo malo de dibujar parejas que no son toxicas, no sabes cuando terminan jejeje.,   {
+      "id": "rata-emo",
+      "titulo": "Rata Emo",
+      "ruta": "/imagenes/arte/rata-emo.gif",
+      "descripcion": "Sé que es un murcielago, pero sigue siendo una rata."
+    },   {
+      "id": "lumber-murder",
+      "titulo": "Asesino Delinno",
+      "ruta": "/imagenes/arte/the-lumber-murder.png",
+      "descripcion": "El asesino de los simbolos Delinno, en el dibujo traté de hace referencia a cierto asesino que nunca fué encontrado, aunque el diseño cambiará."
+    },   {
+      "id": "colonizer-lob",
+      "titulo": "Colonizador Lobotomizado",
+      "ruta": "/imagenes/arte/Colonizer07.jpeg",
+      "descripcion": "¿Abejita?"
+    }
+  ],
+  "es": [
+  {
+    "id": "djsaurus",
+    "titulo": "Djsaurus Boceto",
+    "ruta": "/imagenes/arte/djsaurus.png",
+    "descripcion": "Djsaurus es una bestia parda, muy poderosa y fantástica, se cuenta que un día regañó a Burt Lancaster, dando origen a una expresión legendaria y repudiada por él mismo. La mejor parte es cuando djsaurus djsaurea en la peña."
+  },
+  {
+    "id": "gecko-darkness",
+    "titulo": "El gecko en la oscuridad",
+    "ruta": "/imagenes/arte/gecko-darkness.png",
+    "descripcion": "Es el bendito gecko que sale cuando la página está en mantenimiento, es hermoso y desconocido."
+  },
+  {
+    "id": "MatDib",
+    "titulo": "Mateo",
+    "ruta": "/imagenes/arte/Matdib.png",
+    "descripcion": "Lo más complicado fue intentar hacer rostros tan precisos, ahora el problema es que parece hecho por IA por los colores tan cutres y mierderos que utilicé."
+  },
+  {
+    "id": "edgar-dr",
+    "titulo": "Edgar",
+    "ruta": "/imagenes/arte/edgar-dr.png",
+    "descripcion": "Una deidad griega hecha carne, plasmada en un dibujo de pixel art que no le hace justicia a su belleza."
+  },
+  {
+    "id": "maho-dr",
+    "titulo": "Maho Buttercup",
+    "ruta": "/imagenes/arte/mahobt-dr.png",
+    "descripcion": "Una entidad de los backrooms bastante regulera, bueno, habló Brad Pitt, lo la-mento... es para probar la localización mahito, en plan, es súper personal y esas cosas."
+  },
+  {
+    "id": "jan-dr",
+    "titulo": "Janee Daltónica",
+    "ruta": "/imagenes/arte/janda-dr.png",
+    "descripcion": "¿No distingues? Qué delicia. Realmente solo te hablé tres veces, pero le diste like a la publicación antes que nadie, así que aquí estás..."
+  },
+  {
+    "id": "shoo-dr",
+    "titulo": "Shoo Tv",
+    "ruta": "/imagenes/arte/shoo-dr.png",
+    "descripcion": "Sé que mientes, ¡lo odias por completo!."
+  },
+  {
+    "id": "fertr-dr",
+    "titulo": "Fersita Friki",
+    "ruta": "/imagenes/arte/fertr-dr.png",
+    "descripcion": "Pues de gratis, toma, espabila coño, que de lo contrario te seguirán vacilando en tus streams (y me seguiré burlando de ello)."
+  },
+  {
+    "id": "hamantha-dr",
+    "titulo": "Hamantha",
+    "ruta": "/imagenes/arte/hamantha.png",
+    "descripcion": "Difícil de ignorar, entran ganas de pegarle un bocado a esa carita tan carnosa."
+  },
+  {
+    "id": "alexcostabrav-dr",
+    "titulo": "Alexito y Maya Costa Brava",
+    "ruta": "/imagenes/arte/alexito-costa.png",
+    "descripcion": "Yo os ayudo, cracks."
+  },
+  {
+    "id": "rata-emo",
+    "titulo": "Rata Emo",
+    "ruta": "/imagenes/arte/rata-emo.gif",
+    "descripcion": "Sé que es un murciélago, pero sigue siendo una rata."
+  },
+  {
+    "id": "lumber-murder",
+    "titulo": "Asesino Delinnio",
+    "ruta": "/imagenes/arte/the-lumber-murder.png",
+    "descripcion": "El asesino de los símbolos Delinnio, en el dibujo traté de hacer referencia a cierto asesino que nunca fue encontrado, aunque el diseño cambiará."
+  },
+  {
+    "id": "colonizer-lob",
+    "titulo": "Colonizador Lobotomizado",
+    "ruta": "/imagenes/arte/Colonizer07.jpeg",
+    "descripcion": "¿Abeja Maja?"
+  }
+],
+ "en": [
+  {
+    "id": "djsaurus-dr",
+    "titulo": "Djsaurus Sketch",
+    "ruta": "/imagenes/arte/djsaurus.png",
+    "descripcion": "Djsaurus is a mechanical beast, incredibly powerful and awesome. Legend has it that when Djsaurus slept for two days straight, Saturday and Sunday were created. The best part is when Djsaurus says 'It's Djsaurin' time' and Djsaures all over the bad guys."
+  },
+  {
+    "id": "gecko-darkness",
+    "titulo": "The Gecko in the Darkness",
+    "ruta": "/imagenes/arte/gecko-darkness.png",
+    "descripcion": "It's the blessed gecko that pops up when the site is under maintenance. It is beautiful and unknown."
+  },
+  {
+    "id": "MatDib",
+    "titulo": "Mateo",
+    "ruta": "/imagenes/arte/Matdib.png",
+    "descripcion": "The hardest part was trying to draw faces with such precision. Now the problem is that it looks AI-generated because of the absolute dogshit colors I used."
+  },
+  {
+    "id": "edgar-dr",
+    "titulo": "Edgar",
+    "ruta": "/imagenes/arte/edgar-dr.png",
+    "descripcion": "A Greek deity made flesh, captured in a pixel art drawing that simply doesn't do his beauty justice."
+  },
+  {
+    "id": "maho-dr",
+    "titulo": "Maho Buttercup",
+    "ruta": "/imagenes/arte/mahobt-dr.png",
+    "descripcion": "A total busted Backrooms entity—well, look who's talking, Brad Pitt over here. I'm like, sor-ry... it's just to test the Mahito localization, but like, it's totally personal and stuff."
+  },
+{
+  "id": "jan-dr",
+  "titulo": "Colorblind Janee",
+  "ruta": "/imagenes/arte/janda-dr.png",
+  "descripcion": "I can't tell the difference, what a delight... Sorry, I think I've been listening to too much Strokes lately. Honestly, I've only spoken to you three times, but you liked the post before anyone else, so here you are..."
+},
+  {
+    "id": "shoo-dr",
+    "titulo": "Shoo Tv",
+    "ruta": "/imagenes/arte/shoo-dr.png",
+    "descripcion": "Girl, I know you're lying, you absolutely hate it!"
+  },
+  {
+    "id": "fertr-dr",
+    "titulo": "Troll Fersita",
+    "ruta": "/imagenes/arte/fertr-dr.png",
+    "descripcion": "Well, here it is for free, mate, bloody wake up, otherwise they'll keep roasting you on your streams (and I'll keep making fun of it)."
+  },
+  {
+    "id": "hamantha-dr",
+    "titulo": "Hamantha",
+    "ruta": "/imagenes/arte/hamantha.png",
+    "descripcion": "You were impossible to ignore, makes you want to take a bite out of that meaty face."
+  },
+  {
+    "id": "alexcostabrav-dr",
+    "titulo": "Alexito and Maya Costa Brava",
+    "ruta": "/imagenes/arte/alexito-costa.png",
+    "descripcion": "I got you guys, legends."
+  },
+  {
+    "id": "rata-emo",
+    "titulo": "Emo Rat",
+    "ruta": "/imagenes/arte/rata-emo.gif",
+    "descripcion": "I know it's a bat, but it's still a rat."
+  },
+  {
+    "id": "lumber-murder",
+    "titulo": "Lumber Murder",
+    "ruta": "/imagenes/arte/the-lumber-murder.png",
+    "descripcion": "The Murder of the Lumber symbols. In the drawing, I tried to reference a certain killer who was never found, though the design will change."
+  },
+  {
+    "id": "colonizer-lob",
+    "titulo": "Lobotomized Colonizer",
+    "ruta": "/imagenes/arte/Colonizer07.jpeg",
+    "descripcion": "Larry"
+  }
+],
+"pt": [
+  {
+    "id": "djsaurus-dr",
+    "titulo": "Djsaurus Esboço",
+    "ruta": "/imagenes/arte/djsaurus.png",
+    "descripcion": "O Djsaurus é uma besta mecânica, muito poderosa e incrível. Diz a lenda que quando o Djsaurus dormiu dois dias seguidos, o sábado e o domingo foram criados. A melhor parte é quando o Djsaurus diz 'É hora de djsaurar' e djsaura em cima dos vilões."
+  },
+  {
+    "id": "gecko-darkness",
+    "titulo": "O Gecko na Escuridão",
+    "ruta": "/imagenes/arte/gecko-darkness.png",
+    "descripcion": "É o bendito gecko que aparece quando a página está em manutenção, é lindo e desconhecido."
+  },
+  {
+    "id": "MatDib",
+    "titulo": "Mateo",
+    "ruta": "/imagenes/arte/Matdib.png",
+    "descripcion": "A parte mais difícil foi tentar fazer rostos tão precisos. Agora o problema é que parece feito por IA por causa das cores tão cagadas e escrotas que eu usei."
+  },
+  {
+    "id": "edgar-dr",
+    "titulo": "Edgar",
+    "ruta": "/imagenes/arte/edgar-dr.png",
+    "descripcion": "Uma divindade grega feita carne, plasmada em um desenho pixel art que não faz jus à sua beleza."
+  },
+  {
+    "id": "maho-dr",
+    "titulo": "Maho Buttercup",
+    "ruta": "/imagenes/arte/mahobt-dr.png",
+    "descripcion": "Uma entidade dos backrooms bem baranga — pô, falou o Brad Pitt, né? Me des-culpe... é só para testar a localização do Mahito, tipo, é super pessoal e essas coisas."
+  },
+  {
+    "id": "jan-dr",
+    "titulo": "Janee Daltônica",
+    "ruta": "/imagenes/arte/janda-dr.png",
+    "descripcion": "Não distingue? Que delícia — desculpa, acho que andei ouvindo The Strokes demais ultimamente. Na real, eu só falei com você 3 vezes, mas você deu like na publicação antes de todo mundo, então aqui está..."
+  },
+  {
+    "id": "shoo-dr",
+    "titulo": "Shoo Tv",
+    "ruta": "/imagenes/arte/shoo-dr.png",
+    "descripcion": "Eu sei que você está mentindo, você odeia isso por completo!"
+  },
+  {
+    "id": "fertr-dr",
+    "titulo": "Fersita Geek",
+    "ruta": "/imagenes/arte/fertr-dr.png",
+    "descripcion": "Vai, de graça, toma essa, acorda pra vida, porra, senão vão continuar te zoando nas suas streams (e eu vou continuar me rindo disso)."
+  },
+  {
+    "id": "hamantha-dr",
+    "titulo": "Hamantha",
+    "ruta": "/imagenes/arte/hamantha.png",
+    "descripcion": "Difícil de ignorar, dá até vontade de dar uma mordida nessa bochecha tão carnuda."
+  },
+  {
+    "id": "alexcostabrav-dr",
+    "titulo": "Alexito e Maya Costa Brava",
+    "ruta": "/imagenes/arte/alexito-costa.png",
+    "descripcion": "Eu dou uma força para vocês, mitos."
+  },
+  {
+    "id": "rata-emo",
+    "titulo": "Rata Emo",
+    "ruta": "/imagenes/arte/rata-emo.gif",
+    "descripcion": "Eu sei que é um morcego, mas continua sendo uma ratazana."
+  },
+  {
+    "id": "lumber-murder",
+    "titulo": "Assassino Vespasino",
+    "ruta": "/imagenes/arte/the-lumber-murder.png",
+    "descripcion": "O assassino dos símbolos Vespasino. No desenho, tentei fazer referência a um certo assassino que nunca foi encontrado, embora o design vá mudar."
+  },
+  {
+    "id": "colonizer-lob",
+    "titulo": "Colonizador Lobotomizado",
+    "ruta": "/imagenes/arte/Colonizer07.jpeg",
+    "descripcion": "Calabreso?"
+  }
+]
+}
