@@ -1,46 +1,284 @@
+
+/*
 {
-  "mx": [
+"es": [  
+       {
+
+    "icon": "ღ❦",
+    "titulo": "Gafar en sideral",
+    "fecha": "23/05/2026",
+    "detalle": "Parece que estoy tragando más de lo que puedo masticar, tantas cosas que deben encajar y ahora hay algo más, con la iglesia hemos dado, Sancho… La creatividad e imaginación parecen drenarse por el ducto de lo que viene a niveles que solo un agujero negro conoce, espero que después de esto me dejen usar la frase: “¡Tan largo me lo fiais!”, quien tal hace, que tal pague. ┐('～；)┌ Cada suspiro es como un sorbo de vida del que uno se deshace, ¿es aquí donde quiero dar mi vida? O ¿solo es una excusa para poder continuar con lo que quiero?, espero que la luz me de una respuesta porque la oscuridad me ha acogido, pero me ha cegado en lo que era. Este lado izquierdo de mi corazón que busca imaginar y no quiere golpear ahora parece inútil para poder hacer lo que quiero, solo funciona para darle ideas a los mas cerdos y que puedan lucrar de ello, el ganar es importante, pero sacrificar mis ideas por dinero es algo que no creo que lo valga. Ciertamente estoy probando algo nuevo y diferente, ahora comprendo que localizando puedo adaptar la próxima obra que es prácticamente solo texto combinado con mecánicas hermanas a “FNAF” o cualquier juego “Point and click” realmente, puedes percatarte de ciertas referencias a lo largo del texto, estos puntos requieren cierta adaptación, veo que para una obra no se puede exigir a quien viene que aprenda mi lengua materna, ciertamente no me encontraba tan bien últimamente, yo no sentía dolor, sólo una cosa negra que me fue oscureciendo el pensamiento hasta la oscuridad total. En ella, la oscuridad, me percaté que podía mejorar, cambiar, evolucionar, sin dañar el resto claro. Son las tres de la tarde a la hora que este texto fue escrito.",
+    "imagenes": []
+
+  },
+     {
+
+    "icon": "ⓘ",
+    "titulo": "Activos que regresan",
+    "fecha": "22/04/2026",
+    "detalle": "¡Hola a todos! ☉ ‿ ⚆ Les informo que a partir de ahora cuento con la autorización para integrar activos externos bajo este nombre. Para evitar cualquier confusión: todo lo relacionado con DIRVELOPMENT se gestionará y pertenecerá exclusivamente a este espacio desde hoy. ¿Oki doki? (•̀ᴗ•́)و ̑̑, esto incluye: Musica, Diseños e Ideas. Ahora estamos con todo.",
+    "imagenes": []
+
+  },
+   {
+
+    "icon": "ⓘ",
+    "titulo": "Yo no soy Roberto Zorras",
+    "fecha": "03/04/2026",
+    "detalle": "¡MALAS! (  •̀⤙•́  ) he agregado la opción de multilengua al sitio web, esto no choca con mi vision y como soy el unico que interactua con esta cosa solo yo puedo estar seguro de lo que hay aquí por lo que... ahora todos hablarán ingles, lola mento, estoy de joda, ahora que todos tienen acceso a esto espero y me dé tiempo a terminar los libros para que toda sección esté llena cuando lleguen los visitantes de otros lugares.",
+    "imagenes": ["imagenes/lola-mentas.png"]
+
+  },
     {
-      "id": "eneko",
-      "titulo": "Eneko",
-      "pdf": "/historias/pdf/eneko.pdf",
-      "sinopsis": "Sigue la historia de un repartidor fracasado con aires de artista, que vive con su mejor amigo en su sótano mientras paga algunas cuentas pendientes, con una tecnología capaz de revolucionar la industria desarrollada por su mejor amiga que la utiliza para... entregar paquetes de forma más veloz. Vaya desperdicio, no podría ser peor... ¿verdad?",
-      "rating": 0.0,
-      "reseñas": ["No hay"],
-      "urlLeer": ""
-    }
-  ],
-  "es": [
+    "icon": "ⓘ",
+    "titulo": "Recibir lo que vienes dando",
+    "fecha": "15/03/2026",
+    "detalle": "¡Buenas! (ᕗ ͠° ਊ ͠° )ᕗ Los productos que estaba realizando en colaboración volverán a estar bajo mi total desarrollo. Se sumará una lista gigantesca de proyectos a Dakore-Dyte; les digo 'productos' porque son un montón de cosas variadas que van desde videojuegos hasta películas animadas. De cualquier forma, no se eliminarán las colaboraciones externas ni los aportes anónimos públicos.",
+    "imagenes": []
+  },
+  {
+    "icon": "🛠",
+    "titulo": "Nuevo diseño papus",
+    "fecha": "12/03/2026",
+    "detalle": "Que tal cracks (｀-´)>, se estrenaron nuevos diseños para la pagina web, con 2 paginas en su totalidad, una para gente de bajos recursos y otra normal que es para la gente normal :Vv, aunque realmente es dependiendo tu conexion al internet para que estés en contacto con el nucleo o conmmigo :d.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕮",
+    "titulo": "Nuevos libros 🕮",
+    "fecha": "17/02/2026",
+    "detalle": "Buenas papus, se han publicado nuevos libros en la seccion de historias, de momento son publicos los siguientes libros: El oso azul (su beta :V) y La revista de la gran guerra; me esfuerzo por sacar todas las historias posibles pero tengo que sacar calificacion decente para terminar la preparatoria ┐('～`；)┌",
+    "imagenes": []
+  },
+   {
+    "icon": "🕹",
+    "titulo": "Nuevo juego, Charmena #1",
+    "fecha": "16/02/2026",
+    "detalle": "Se a publicado Charmena, un tower defense donde proteges al ojo de las irregularidades del vacío.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕹",
+    "titulo": "Nuevo juego, Geosmina #1",
+    "fecha": "06/02/2026",
+    "detalle": "Geosmina será un videojuego de gestion de ciudades y economía donde controlas al mensajero del segundo silencio, con otro nombre genial que tu eligirás, puedes adentrarte al mundo de geosmina con el ordenador del estado de Nora y descubrir secretos antes que todos.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕮",
+    "titulo": "Las minihistorias fueron eliminadas ( ╥﹏╥) ノシ",
+    "fecha": "06/02/2026",
+    "detalle": "Talvez regresen pero ahora hay menos tiempo, aquí habrá mas actividad así que es mas conveniente tener el panorama libre.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕹",
+    "titulo": "Nuevo fangame, Siete noches en TTS #1",
+    "fecha": "08/12/2025",
+    "detalle": "Siete noches en TTS",
+    "imagenes": [
+      "imagenes/TeaserWeird.jpeg",
+      "imagenes/anotherTeaser.jpeg",
+      "imagenes/OficinaTeaser.png"
+    ]
+  },
+  {
+    "icon": "🛠",
+    "titulo": "Lanzamiento Oficial de la Nueva Versión del Sitio ⚙",
+    "fecha": "26/11/2025",
+    "detalle": "",
+    "imagenes": []
+  },
+  {
+    "icon": "🛠",
+    "titulo": "Ahora hay mejores colores ⚙",
+    "fecha": "26/11/2025",
+    "detalle": "",
+    "imagenes": []
+  }
+]
+,
+
+"en": [
     {
-      "id": "eneko",
-      "titulo": "Eneko",
-       "pdf": "/historias/pdf/eneko.pdf",
-      "sinopsis": "Sigue la historia de un repartidor fracasado con aires de artista que vive con su mejor amigo en su sótano mientras paga algunas cuentas pendientes. Tienen una tecnología capaz de revolucionar la industria, desarrollada por su mejor amiga, pero ella la utiliza para... entregar paquetes más rápido. Menudo desperdicio, no podría ser peor... ¿verdad?",
-      "rating": 0.0,
-      "reseñas": ["No hay"],
-      "urlLeer": ""
-    }
-  ],
-  "en": [
+    "icon": "ღ❦",
+    "titulo": "Mozz on sideral",
+    "fecha": "23/05/2026",
+    "detalle": "It feels like I’ve bitten off more than I can chew. So many pieces need to fit together, and now there’s something else... We’ve run straight into the Valley of Ashes, Nick… My creativity and imagination seem to be draining down the industrial ductwork of the future, down to depths only a black hole could comprehend. I just hope that after all this, they’ll let me keep living on borrowed time. After all, the bill always comes due. ┐('～；)┌ Every sigh is like a drop of life slipping away. Is this where I really want to lay down my life? Or is it just an excuse to keep chasing what I actually want? I hope the light brings an answer, because the darkness has welcomed me, but it has blinded me to who I used to be. This left side of my heart, the one that longs to imagine and refuses to just beat mechanically, feels useless now for doing what I actually want. It only seems to work to feed ideas to the corporate vultures so they can profit off them. Winning matters, sure, but selling out my ideas for cash is something I just don't think is worth it. I’m certainly trying something new and different here. Now I understand that through localization, I can adapt this next project—which is practically pure text combined with mechanics sister to “FNAF” or really any Point-and-Click game. You might catch a few references scattered throughout the text; these spots require real adaptation. I see now that for a piece of art, you can't expect newcomers to learn your mother tongue. Truth be told, I haven't been doing so well lately. I felt no pain—just a heavy, black thing clouding my mind until it was total darkness. And within it, the darkness, I realized I could improve, change, evolve... without damaging the rest, of course. It is three in the afternoon at the time this text was written.",
+    "imagenes": []
+},
+  {
+    "icon": "ⓘ",
+    "titulo": "Returning Assets",
+    "fecha": "22/04/2026",
+    "detalle": "Hey everyone! ☉ ‿ ⚆ Just wanted to let you know that, starting now, I'm authorized to integrate external assets under this name. To keep things clear: everything related to DIRVELOPMENT will be managed here and belongs exclusively to this space from today onwards. Sound good? (•̀ᴗ•́)و ̑̑ This includes music, designs, and ideas. We're going all in now.",
+    "imagenes": []
+},
+  {
+    "icon": "ⓘ",
+    "titulo": "I am not Toby Faux-y",
+    "fecha": "03/04/2026",
+    "detalle": "BAD DAY EVERYONE! (  •̀⤙•́  ) I've added multi-language support to the website. This doesn't clash with my vision, and since I'm the only one interacting with this thing, only I can be sure of what's here... so now everyone will speak English. I'm so-mint-ly sorry... Just kidding! Now that everyone has access to this, I hope I have enough time to finish the books so every section is full when visitors from other places arrive.",
+    "imagenes": ["imagenes/lola-mentas.png"]
+  },
+  {
+    "icon": "ⓘ",
+    "titulo": "Getting what you've been giving",
+    "fecha": "15/03/2026",
+    "detalle": "Hey! (ᕗ ͠° ਊ ͠° )ᕗ The projects I was making in collaboration are back under my full development. A massive list of projects will be added to Dakore-Dyte; I call them 'products' because they're a bunch of different things ranging from video games to animated movies. Either way, external collaborations and anonymous public contributions won't be deleted.",
+    "imagenes": []
+  },
+  {
+    "icon": "🛠",
+    "titulo": "New design folks",
+    "fecha": "12/03/2026",
+    "detalle": "What's up cracks (｀-´)>, new designs for the website have been released, with 2 full pages: one for low-end PCs and a normal one for normal people :Vv. It actually depends on your internet connection so you stay in touch with the core or with me :d.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕮",
+    "titulo": "New books 🕮",
+    "fecha": "17/02/2026",
+    "detalle": "Yo guys, new books have been published in the stories section. Currently, the following books are public: The Blue Bear (beta version :V) and The Great War Magazine; I'm trying my best to release all stories possible but I need to get decent grades to finish high school ┐('～`；)┌",
+    "imagenes": []
+  },
+  {
+    "icon": "🕹",
+    "titulo": "New game, Charmena #1",
+    "fecha": "16/02/2026",
+    "detalle": "Charmena has been published! A tower defense where you protect the eye from the irregularities of the void.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕹",
+    "titulo": "New game, Geosmina #1",
+    "fecha": "06/02/2026",
+    "detalle": "Geosmina will be a city management and economy game where you control the messenger of the second silence, with another cool name you'll choose. You can dive into the world of Geosmina using the Nora State computer and discover secrets before everyone else.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕮",
+    "titulo": "Mini-stories were deleted ( ╥﹏╥) ノシ",
+    "fecha": "06/02/2026",
+    "detalle": "They might come back, but there's less time now. There will be more activity here, so it's better to keep the view clear.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕹",
+    "titulo": "New fangame, Seven Nights at TTS #1",
+    "fecha": "08/12/2025",
+    "detalle": "Seven Nights at TTS",
+    "imagenes": [
+      "imagenes/TeaserWeird.jpeg",
+      "imagenes/anotherTeaser.jpeg",
+      "imagenes/OficinaTeaser.png"
+    ]
+  },
+  {
+    "icon": "🛠",
+    "titulo": "Official Launch of the New Site Version ⚙",
+    "fecha": "26/11/2025",
+    "detalle": "",
+    "imagenes": []
+  },
+  {
+    "icon": "🛠",
+    "titulo": "Better colors now ⚙",
+    "fecha": "26/11/2025",
+    "detalle": "",
+    "imagenes": []
+  }
+],
+"pt": [
     {
-      "id": "eneko",
-      "titulo": "Eneko",
-      "pdf": "/historias/pdf/eneko_en.pdf",
-      "sinopsis": "Follow the story of a washed-up delivery guy with the soul of an artist, living in his best friend's basement while tying up some loose ends. He has access to a game-changing technology developed by his best gal friend, who uses it to... deliver packages faster. What a complete waste. It couldn't possibly get any worse... right?",
-      "rating": 0.0,
-      "reseñas": ["None yet"],
-      "urlLeer": ""
-    }
-  ],
-  "pt": [
-    {
-      "id": "eneko",
-      "titulo": "Eneko",
-      "pdf": "/historias/pdf/eneko_pt.pdf",
-      "sinopsis": "Acompanhe a história de um entregador fracassado com ares de artista, que mora no porão do seu melhor amigo enquanto limpa seu nome na praça. Eles têm em mãos uma tecnologia capaz de revolucionar a indústria, desenvolvida por sua melhor amiga, mas ela a usa para... entregar pacotes mais rápido. Que belo desperdício, não teria como piorar... teria?",
-      "rating": 0.0,
-      "reseñas": ["Nenhuma ainda"],
-      "urlLeer": ""
-    }
-  ]
+    "icon": "ღ❦",
+    "titulo": "Azarado Sideral",
+    "fecha": "23/05/2026",
+    "detalle": "Parece que estou a dar um passo maior que a perna. Tantas engrenagens que precisam de se encaixar e agora surge mais isto... Batemos de frente com o Santo Ofício, Fernando… A criatividade e a imaginação parecem escoar pela tubulação industrial do porvir, em níveis que só um buraco negro conhece. Espero que, depois de tudo isto, me deixem usar a máxima do Desassossego: “Adiei tanto a própria vida!”, afinal, a conta do destino acaba sempre por chegar. ┐('～；)┌ Cada suspiro é como um bocado de mim que morre, um gole de vida de que a gente se desfaz. Será aqui que quero entregar a minha vida? Ou será apenas um pretexto para poder continuar com o que realmente quero? Espero que a luz me traga uma resposta, porque a escuridão acolheu-me, mas cegou-me para o que eu costumava ser. Este lado escolher do meu coração, que procura imaginar e se recusa a bater apenas de forma mecânica, parece agora inútil para fazer o que quero. Só serve para alimentar com ideias os porcos mais gananciosos, para que lucrem com elas. Ganhar é importante, mas sacrificar as minhas ideias por dinheiro é algo que não creio valer a pena. Certamente estou a testar algo novo e diferente. Agora compreendo que, ao localizar, posso adaptar a próxima obra — que é praticamente puro texto combinado com mecânicas irmãs de “FNAF” ou de qualquer jogo “Point and click”, na verdade. É possível notar certas referências ao longo do texto; estes pontos exigem uma verdadeira adaptação. Vejo que, para uma obra, não se pode exigir a quem vem que aprenda a minha língua materna. Verdade seja dita, eu não andava nada bem ultimamente; eu não sentia dor, era apenas uma névoa negra que me ia obscurecendo o pensamento — como um cego que, vendo, não vê — até à escuridão total. Nela, na escuridão, percebi que podia melhorar, mudar, evoluir... sem danificar o resto, claro. São três horas da tarde no momento em que este texto foi escrito.",
+    "imagenes": []
+},
+  {
+    "icon": "ⓘ",
+    "titulo": "Ativos de volta",
+    "fecha": "22/04/2026",
+    "detalle": "Olá a todos! ☉ ‿ ⚆ Informo que a partir de agora tenho autorização para integrar ativos externos sob este nome. Para evitar qualquer confusão: tudo relacionado à DIRVELOPMENT será gerenciado e pertencerá exclusivamente a este espaço a partir de hoje. Oki doki? (•̀ᴗ•́)و ̑̑ Isso inclui: Música, Designs e Ideias. Agora vamos com tudo.",
+    "imagenes": []
+  },
+  {
+    "icon": "ⓘ",
+    "titulo": "Eu não sou o Roberto Raposo",
+    "fecha": "03/04/2026",
+    "detalle": "DEU RUIM! (  •̀⤙•́  ) Adicionei a opção de multi-idioma ao site. Isso não bate de frente com a minha visão e, como sou o único que mexe nesta coisa, só eu posso ter certeza do que tem aqui, então... todo mundo vai falar inglês agora! Lola Mento, tô de zoeira. Agora que todos têm acesso a isso, espero que dê tempo de terminar os livros para que todas as seções estejam cheias quando os visitantes de outros lugares chegarem.",
+    "imagenes": ["imagens/lola-mentas.png"]
+  },
+  {
+    "icon": "ⓘ",
+    "titulo": "Colhendo o que se planta",
+    "fecha": "15/03/2026",
+    "detalle": "Salve! (ᕗ ͠° ਊ ͠° )ᕗ Os produtos que eu estava fazendo em colaboração voltarão a estar sob o meu total desenvolvimento. Uma lista gigantesca de projetos será somada à Dakore-Dyte; eu chamo de 'produtos' porque é um monte de coisas variadas que vão desde videogames até filmes de animação. De qualquer forma, as colaborações externas e as contribuições públicas anônimas não serão eliminadas.",
+    "imagenes": []
+  },
+  {
+    "icon": "🛠",
+    "titulo": "Novo design, manos",
+    "fecha": "12/03/2026",
+    "detalle": "E aí, mitos (｀-´)>, estreamos novos designs para a página web, com 2 páginas no total: uma para a galera do PC de batata e outra normal, que é para as pessoas normais :Vv. Embora, na verdade, dependa da sua conexão com a internet para você estar em contato com o núcleo ou comigo :d.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕮",
+    "titulo": "Novos livros 🕮",
+    "fecha": "17/02/2026",
+    "detalle": "Salve, manos! Foram publicados novos livros na seção de histórias. No momento, os seguintes livros estão públicos: O Urso Azul (a versão beta :V) e A Revista da Grande Guerra. Estou me esforçando para lançar o máximo de histórias possível, mas preciso tirar notas decentes para terminar o ensino médio ┐('～`；)┌",
+    "imagenes": []
+  },
+  {
+    "icon": "🕹",
+    "titulo": "Novo jogo, Charmena #1",
+    "fecha": "16/02/2026",
+    "detalle": "Foi publicado Charmena, um tower defense onde você protege o olho das irregularidades do vazio.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕹",
+    "titulo": "Novo jogo, Geosmina #1",
+    "fecha": "06/02/2026",
+    "detalle": "Geosmina será um jogo de gestão de cidades e economia onde você controla o mensageiro do segundo silêncio — com outro nome genial que você vai escolher! Você pode entrar no mundo de Geosmina pelo computador do estado de Nora e descobrir segredos antes de todo mundo.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕮",
+    "titulo": "As minihistórias foram deletadas ( ╥﹏╥) ノシ",
+    "fecha": "06/02/2026",
+    "detalle": "Talvez elas voltem, mas agora o tempo está curto. Aqui haverá mais atividade, então é mais conveniente deixar o caminho livre.",
+    "imagenes": []
+  },
+  {
+    "icon": "🕹",
+    "titulo": "Novo fangame, Sete Noites no TTS #1",
+    "fecha": "08/12/2025",
+    "detalle": "Sete Noites no TTS",
+    "imagenes": [
+      "imagenes/TeaserWeird.jpeg",
+      "imagenes/anotherTeaser.jpeg",
+      "imagenes/OficinaTeaser.png"
+    ]
+  },
+  {
+    "icon": "🛠",
+    "titulo": "Lançamento Oficial da Nova Versão do Site ⚙",
+    "fecha": "26/11/2025",
+    "detalle": "",
+    "imagenes": []
+  },
+  {
+    "icon": "🛠",
+    "titulo": "Agora com cores melhores ⚙",
+    "fecha": "26/11/2025",
+    "detalle": "",
+    "imagenes": []
+  }
+]
 }
+*/
+
