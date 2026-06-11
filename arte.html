@@ -626,7 +626,7 @@ document.addEventListener("DOMContentLoaded", () => {
     async function cargarGaleria(){
         try {
             const lang = getSystemLanguage();
-            // CORREGIDO: Ruta apuntando a arte.json en la raíz junto al HTML
+            //
             const res = await fetch(`./arte.json?v=` + Date.now());
             if (!res.ok) throw new Error(`No se encontró el archivo arte.json`);
             
@@ -665,7 +665,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lupa.style.display = "none";
     });
 
-    // --- Lógica de Rotación ---
+    //Lógica de Rotación
     document.getElementById("rotarIzq").addEventListener("pointerdown", () => {
         startInterval("rotar", () => {
             rotacion -= 3;
