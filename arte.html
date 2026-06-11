@@ -550,48 +550,51 @@ Listening to: <span id="current-song" style="color:var(--hot-pink); text-decorat
 <div id="pinkTransition"></div>
 <script>
 const i18n = {
-
-    "es-mx": {
+    "mx": {
         "nav-inicio": "1N1C10",
         "nav-juegos": "JU3G05",
         "nav-historias": "H1570R145",
         "nav-arte": "4R73",
-
     },
-
     "es": {
         "nav-inicio": "1NIC10",
         "nav-juegos": "JUEG05",
         "nav-historias": "HIS70RIAS",
         "nav-arte": "AR7E",
-
     },
-
     "en": {
         "nav-inicio": "H0M3",
         "nav-juegos": "G4M35",
         "nav-historias": "570R135",
         "nav-arte": "4R7",
-
+    },
+    "pt": {
+        "nav-inicio": "1N1C10",
+        "nav-juegos": "J0G05",
+        "nav-historias": "H1570R145",
+        "nav-arte": "4R73",
     }
 };
 
-function translatePage() {
-
+function getSystemLanguage() {
     const rawLang = navigator.language.toLowerCase();
-    let lang = "en";
-
     if (rawLang.includes('es-mx') || rawLang.includes('es-419') || rawLang.includes('-mx')) {
-        lang = "es-mx";
+        return "mx";
     } else if (rawLang.startsWith('es')) {
-        lang = "es";
+        return "es";
+    } else if (rawLang.startsWith('pt')) {
+        return "pt";
     }
+    return "en";
+}
 
+function translatePage() {
+    const lang = getSystemLanguage();
     const elements = document.querySelectorAll('[data-key]');
     
     elements.forEach(el => {
         const key = el.getAttribute('data-key');
-        if (i18n[lang][key]) {
+        if (i18n[lang] && i18n[lang][key]) {
             el.textContent = i18n[lang][key];
         }
     });
@@ -599,6 +602,7 @@ function translatePage() {
 
 document.addEventListener("DOMContentLoaded", translatePage);
 </script>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const galeria = document.getElementById("galeria");
@@ -619,31 +623,22 @@ document.addEventListener("DOMContentLoaded", () => {
         intervals[name] = setInterval(fn, ms);
     }
 
-const getManifestName = () => {
-    const lang = navigator.language.toLowerCase(); 
-    if (lang.includes('es-mx') || lang.includes('es-419') || lang.includes('-mx')) {
-        return "manifest-mx.json";
-    }
-    if (lang.startsWith('es')) {
-        return "manifest-es.json";
-    }
-
-    return "manifest-en.json";
-};
     async function cargarGaleria(){
         try {
-const manifestTarget = getManifestName();
-const res = await fetch(`../dibujos/${manifestTarget}?v=` + Date.now());
-            if (!res.ok) throw new Error(`No se encontró ${manifestTarget}`);
+            const lang = getSystemLanguage();
+            const res = await fetch(`..arte.json?v=` + Date.now());
+            if (!res.ok) throw new Error(`No se encontró el archivo manifest.json`);
             
-            const manifestList = await res.json();
+            const manifestData = await res.json();
             galeria.innerHTML = "";
+
+            const manifestList = manifestData[lang] || manifestData["en"] || [];
 
             manifestList.forEach(item => {
                 const card = document.createElement("div");
                 card.className = "dibujo-card";
                 
-                card.innerHTML = `<img src="../dibujos/${item.archivoImagen}" class="dibujo-thumb" draggable="false">`;
+                card.innerHTML = `<img src="${item.ruta}" class="dibujo-thumb" draggable="false">`;
                 card.addEventListener("click", () => abrirVisor(item));
                 galeria.appendChild(card);
             });
@@ -654,11 +649,11 @@ const res = await fetch(`../dibujos/${manifestTarget}?v=` + Date.now());
     }
 
     function abrirVisor(item){
-        visorImg.src = "/dibujos/" + item.archivoImagen;
+        visorImg.src = item.ruta;
         rotacion = 0;
         visorImg.style.transform = `rotateY(0deg) scale(1)`;
         
-        visorNombre.textContent = item.nombre || "Untitled_Artwork.png";
+        visorNombre.textContent = item.titulo || "Untitled_Artwork.png";
         visorDescripcion.textContent = item.descripcion || "No description found... x_x";
         
         visor.classList.remove("oculto");
